@@ -1,0 +1,5038 @@
+{
+	"info": {
+		"_postman_id": "88a6a8fb-e79a-4ff1-a352-43ade8101c05",
+		"name": "SIGEBI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6419147"
+	},
+	"item": [
+		{
+			"name": "SAE_CAT",
+			"item": [
+				{
+					"name": "deductivas",
+					"item": [
+						{
+							"name": "getAllDeductives",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{deductive}}?inicio=1&pageSize=3",
+									"host": [
+										"{{deductive}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": null,
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDeductiveById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{deductive}}5",
+									"host": [
+										"{{deductive}}5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDeductiveSendDates",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceType\": \"Tipo de servicio de la deductiva 22\",\r\n    \"weightedDeduction\": 1,\r\n    \"startingRankPercentage\": 5,\r\n    \"finalRankPercentage\": 9,\r\n    \"creationDate\": \"2022-06-30 22:55:06\",\r\n    \"editionUser\": \"Usuario que realizó modificación de la deductiva\",\r\n    \"modificationDate\": \"2022-06-30 22:55:06\",\r\n    \"version\": 1,\r\n    \"status\": 2,\r\n    \"contractNumber\": \"Número de contrato de la deductiva\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive}}",
+									"host": [
+										"{{deductive}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDeductiveWithoutDates",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceType\": \"Tipo de servicio de la deductiva 22\",\r\n    \"weightedDeduction\": 1,\r\n    \"startingRankPercentage\": 5,\r\n    \"finalRankPercentage\": 9,\r\n    \"editionUser\": \"Usuario que realizó modificación de la deductiva\",\r\n    \"version\": 1,\r\n    \"status\": 2,\r\n    \"contractNumber\": \"Número de contrato de la deductiva\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive}}",
+									"host": [
+										"{{deductive}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateDeductive",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceType\": \"Actualizar api\",\r\n    \"weightedDeduction\": 1,\r\n    \"startingRankPercentage\": 5,\r\n    \"finalRankPercentage\": 9,\r\n    \"creationDate\": \"2022-06-30 22:55:06\",\r\n    \"editionUser\": \"Usuario que realizó modificación de la deductiva\",\r\n    \"modificationDate\": \"2022-06-30 22:55:06\",\r\n    \"version\": 1,\r\n    \"status\": 0,\r\n    \"contractNumber\": \"Número de contrato de la deductiva\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive}}5",
+									"host": [
+										"{{deductive}}5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deketeDeductive",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{deductive}}5",
+									"host": [
+										"{{deductive}}5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "deductive-verification",
+					"item": [
+						{
+							"name": "getAllDeductivesVerification",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{deductive-verification}}?inicio=1&pageSize=3",
+									"host": [
+										"{{deductive-verification}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDeductiveVerification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción de la verificación deductiva\",\r\n  \"percentagePena\": 1,\r\n  \"verificationType\": \"Tipo de deductiva\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la deductiva\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive-verification}}",
+									"host": [
+										"{{deductive-verification}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDeductiveVerificationWithoutDates",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción de la verificación deductiva\",\r\n  \"percentagePena\": 1,\r\n  \"verificationType\": \"Tipo de deductiva\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la deductiva\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive-verification}}",
+									"host": [
+										"{{deductive-verification}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDeduvtiveVerificationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{deductive-verification}}7",
+									"host": [
+										"{{deductive-verification}}7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateDeductiveVerification",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción Actualizada\",\r\n  \"percentagePena\": 1,\r\n  \"verificationType\": \"Tipo de deductiva\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la deductiva\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{deductive-verification}}7",
+									"host": [
+										"{{deductive-verification}}7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteDeductiveVerification",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{deductive-verification}}7",
+									"host": [
+										"{{deductive-verification}}7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delegation-state",
+					"item": [
+						{
+							"name": "getAllDelegationStates",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{delegation-state}}?inicio=1&pageSize=3",
+									"host": [
+										"{{delegation-state}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDelegationState",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateCode\": \"Codigo del estado\",\r\n  \"userCreated\": \"Usuario que creó la delegación estado\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la delegación estado\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"version\": 1,\r\n  \"keyState\": 1,\r\n  \"status\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{delegation-state}}",
+									"host": [
+										"{{delegation-state}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createDeductiveVerificationWithNull",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateCode\": \"Codigo del estado\",\r\n  \"userCreated\": \"Usuario que creó la delegación estado\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la delegación estado\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{delegation-state}}",
+									"host": [
+										"{{delegation-state}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getDelegationStateById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{delegation-state}}/2",
+									"host": [
+										"{{delegation-state}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateDelegationState",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateCode\": \"Codigo del estado\",\r\n  \"userCreated\": \"Usuario que creó la delegación estado\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la delegación estado\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"version\": 1,\r\n  \"keyState\": 1,\r\n  \"status\": 0\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{delegation-state}}/2",
+									"host": [
+										"{{delegation-state}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteDelegationEstate",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{delegation-state}}/2",
+									"host": [
+										"{{delegation-state}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "general-status",
+					"item": [
+						{
+							"name": "getAllGeneralStatus",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{generalStatus}}?inicio=1&pageSize=3",
+									"host": [
+										"{{generalStatus}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getGeneralStatusById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{generalStatus}}/Nombre del estatus general",
+									"host": [
+										"{{generalStatus}}"
+									],
+									"path": [
+										"Nombre del estatus general"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createGeneralStatus",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"statusProperty\": \"estatus bien\",\r\n  \"statusGeneral\": \"Estatus general\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{generalStatus}}",
+									"host": [
+										"{{generalStatus}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateGeneralStatus",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"statusProperty\": \"Nombre en 30 char\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{generalStatus}}/Nombre del estatus general",
+									"host": [
+										"{{generalStatus}}"
+									],
+									"path": [
+										"Nombre del estatus general"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteGeneralStatus",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{generalStatus}}/Nombre del estatus general",
+									"host": [
+										"{{generalStatus}}"
+									],
+									"path": [
+										"Nombre del estatus general"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "holiday",
+					"item": [
+						{
+							"name": "getAllHolidays",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{holiday}}?inicio=1&pageSize=2",
+									"host": [
+										"{{holiday}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getHolidayById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{holiday}}/3",
+									"host": [
+										"{{holiday}}"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createHoliday",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"holidayDate\": \"2022-06-30 22:55:06\",\r\n  \"description\": \"Descripción del día festivo\",\r\n  \"creationUser\": \"Usuario que creó el día festivo\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación del día festivo\",\r\n  \"version\": 1,\r\n  \"status\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{holid}}",
+									"host": [
+										"{{holid}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteHoliday",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{holiday}}/3",
+									"host": [
+										"{{holiday}}"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateHoliday",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \"holidayDate\": \"2022-06-30 22:55:06\",\r\n  \"description\": \"Descripción del día festivo\",\r\n  \"creationUser\": \"Usuario que creó el día festivo\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación del día festivo\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"version\": 2,\r\n  \"status\": 0\r\n  }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{holiday}}/3",
+									"host": [
+										"{{holiday}}"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "regional-delegation",
+					"item": [
+						{
+							"name": "getAllRegionalDelegations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{regionalDelegation}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{regionalDelegation}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getRegionalDelegationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{regionalDelegation}}/2",
+									"host": [
+										"{{regionalDelegation}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createRegionalDelegation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción \",\r\n  \"registerNumber\": 1,\r\n  \"idEntity\": 1,\r\n  \"creationUser\": \"Usuario que creó la delegación regional\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la delegación regional\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"idGeographicZona\": 1,\r\n  \"version\": 1,\r\n  \"regionalDelegate\": \"Delegado regional de la delegación regional\",\r\n  \"officeAddress\": \"Domicilio de la oficina de la delegación regional\",\r\n  \"status\": 0,\r\n  \"keyZone\": \"Clave de la zona\",\r\n  \"iva\": 16,\r\n  \"city\": \"Ciudad de la zona delegación regional\",\r\n  \"keyState\": \"Clave de estado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{regionalDelegation}}",
+									"host": [
+										"{{regionalDelegation}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateRegionalDelegation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Actualización de la delegación regional\",\r\n  \"registerNumber\": 1,\r\n  \"idEntity\": 1,\r\n  \"creationUser\": \"Usuario que creó la delegación regional\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la delegación regional\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"idGeographicZona\": 1,\r\n  \"version\": 1,\r\n  \"regionalDelegate\": \"Delegado regional de la delegación regional\",\r\n  \"officeAddress\": \"Domicilio de la oficina de la delegación regional\",\r\n  \"status\": 0,\r\n  \"keyZone\": \"Clave de la zona\",\r\n  \"iva\": 16,\r\n  \"city\": \"Ciudad de la zona delegación regional\",\r\n  \"keyState\": \"Clave de estado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{regionalDelegation}}/2",
+									"host": [
+										"{{regionalDelegation}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteRegionalDelegation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{regionalDelegation}}/2",
+									"host": [
+										"{{regionalDelegation}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "state-of-republic",
+					"item": [
+						{
+							"name": "getAllStatesOfRepublic",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{stateOfRepublic}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{stateOfRepublic}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStateOfRepublicById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{stateOfRepublic}}/mexico",
+									"host": [
+										"{{stateOfRepublic}}"
+									],
+									"path": [
+										"mexico"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createStateOfRepublic",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateCode\": \"puebla\",\r\n  \"entityName\": \"Estado de Mexico\",\r\n  \"creationUser\": \"Usuario que creó el estado\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación del estado\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"keyState\": 1,\r\n  \"version\": 1,\r\n  \"stdTimezone\": \"Zona horaria std\",\r\n  \"verTimezone\": \"Versión de la ver\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{stateOfRepublic}}",
+									"host": [
+										"{{stateOfRepublic}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateStateOfRepublic",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"stateCode\": \"mexico\",\r\n  \"entityName\": \"CDMX\",\r\n  \"creationUser\": \"Usuario que creó el estado\",\r\n  \"editionUser\": \"Usuario que realizó modificación del estado\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"keyState\": 1,\r\n  \"version\": 1,\r\n  \"stdTimezone\": \"Zona horaria std\",\r\n  \"verTimezone\": \"Versión de la ver\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{stateOfRepublic}}/mexico",
+									"host": [
+										"{{stateOfRepublic}}"
+									],
+									"path": [
+										"mexico"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteStateOfRepublic",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{stateOfRepublic}}/mexico",
+									"host": [
+										"{{stateOfRepublic}}"
+									],
+									"path": [
+										"mexico"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "station",
+					"item": [
+						{
+							"name": "getAllStations",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{station}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{station}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{station}}/9",
+									"host": [
+										"{{station}}"
+									],
+									"path": [
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createStation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idTransferor\": 1,\r\n  \"idEntity\": 1,\r\n  \"stationName\": \"Nombre las emisora\",\r\n  \"creationUser\": \"Usuario que creó la emisora\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la emisora\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"keyState\": 1,\r\n  \"version\": 1,\r\n  \"status\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{station}}",
+									"host": [
+										"{{station}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateStation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idTransferor\": 1,\r\n  \"idEntity\": 1,\r\n  \"stationName\": \"Nombre \",\r\n  \"creationUser\": \"Usuario que creó la emisora\",\r\n  \"editionUser\": \"Usuario que realizó modificación de la emisora\",\r\n  \"modificationDate\": \"2022-07-01 22:55:06\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"keyState\": 1,\r\n  \"version\": 0,\r\n  \"status\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{station}}/9",
+									"host": [
+										"{{station}}"
+									],
+									"path": [
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteStation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{station}}/9",
+									"host": [
+										"{{station}}"
+									],
+									"path": [
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "zip-code",
+					"item": [
+						{
+							"name": "createZipCode",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"56777\",\r\n  \"entityKey\": \"Clave de la entidad federativa\",\r\n  \"townshipKey\": \"Clave de municipio\",\r\n  \"localityKey\": \"Clave de localidad\",\r\n  \"settlementKey\": \"Clave de asentamiento\",\r\n  \"creationUser\": \"Usuario que creó el código postal\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación del código postal\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"version\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{zipCode}}",
+									"host": [
+										"{{zipCode}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllZipCodes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{zipCode}}?inicio=1&pageSize=3",
+									"host": [
+										"{{zipCode}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getZipCodeById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{zipCode}}/54111",
+									"host": [
+										"{{zipCode}}"
+									],
+									"path": [
+										"54111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateZipCode",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"56777\",\r\n  \"entityKey\": \"Actualizar\",\r\n  \"townshipKey\": \"Clave de municipio\",\r\n  \"localityKey\": \"Clave de localidad\",\r\n  \"settlementKey\": \"Clave de asentamiento\",\r\n  \"creationUser\": \"Usuario que creó el código postal\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación del código postal\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"version\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{zipCode}}/54111",
+									"host": [
+										"{{zipCode}}"
+									],
+									"path": [
+										"54111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteZipCode",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{zipCode}}/54111",
+									"host": [
+										"{{zipCode}}"
+									],
+									"path": [
+										"54111"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "clarification",
+					"item": [
+						{
+							"name": "getAllClarifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{clarification}}?inicio=1&pageSize=3",
+									"host": [
+										"{{clarification}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getClarificationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{clarification}}/1",
+									"host": [
+										"{{clarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createClarification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"clarification\": \"Aclaración\",\r\n  \"type\": 1,\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"2022-07-14 22:55:06\",\r\n  \"version\": 1,\r\n  \"active\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{clarification}}",
+									"host": [
+										"{{clarification}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateClarification",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"clarification\": \"Aclaración ACTUALIZADA\",\r\n  \"type\": 1,\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"2022-07-15 22:55:06\",\r\n  \"version\": 1,\r\n  \"active\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{clarification}}/1",
+									"host": [
+										"{{clarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteClarification",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{clarification}}/1",
+									"host": [
+										"{{clarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "settlement",
+					"item": [
+						{
+							"name": "getAllSettlements",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{settlement}}?inicio=1&pageSize=3",
+									"host": [
+										"{{settlement}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSettlementById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{settlement}}/asentamiento1",
+									"host": [
+										"{{settlement}}"
+									],
+									"path": [
+										"asentamiento1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSettlement",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"asentamiento1\",\r\n  \"keyEntity\": \"Clave de entidad\",\r\n  \"keyTownship\": \"Clave de municipio\",\r\n  \"keyLocality\": \"Clave de localidad\",\r\n  \"name\": \"Nombre de asentamiento\",\r\n  \"type\": \"Clave de tipo asentamiento\",\r\n  \"creationUser\": \"Usuario que creó el registro\",\r\n  \"creationDate\": \"Fecha de creación ej. 2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"Fecha de modificación ej. 2022-07-14 22:55:06\",\r\n  \"version\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{settlement}}",
+									"host": [
+										"{{settlement}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSettlement",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"asentamiento1\",\r\n  \"keyEntity\": \"Clave de entidad\",\r\n  \"keyTownship\": \"Clave de municipio\",\r\n  \"keyLocality\": \"Clave de localidad\",\r\n  \"name\": \"Nombre de ACTUALIZADO\",\r\n  \"type\": \"Clave de tipo asentamiento\",\r\n  \"creationUser\": \"Usuario que creó el registro\",\r\n  \"creationDate\": \"Fecha de creación ej. 2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"Fecha de modificación ej. 2022-07-14 22:55:06\",\r\n  \"version\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{settlement}}/asentamiento1",
+									"host": [
+										"{{settlement}}"
+									],
+									"path": [
+										"asentamiento1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSettlement",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{settlement}}/asentamiento1",
+									"host": [
+										"{{settlement}}"
+									],
+									"path": [
+										"asentamiento1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "city",
+					"item": [
+						{
+							"name": "getAllCities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{city}}?inicio=1&pageSize=3",
+									"host": [
+										"{{city}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCityByCode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{city}}/1",
+									"host": [
+										"{{city}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"idState\": \"identificador del estado\",\r\n  \"cityName\": \"Ciudad (numbre)\",\r\n  \"creationUser\": \"Usuario que creó el registro\",\r\n  \"creationDate\": \"2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-14 22:55:06\",\r\n  \"version\": \"Version de la deductiva ej. 1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{city}}",
+									"host": [
+										"{{city}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCity",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"idState\": \"identificador del estado\",\r\n  \"cityName\": \"Ciudad (numbre)\",\r\n  \"creationUser\": \"Usuario que creó el registro\",\r\n  \"creationDate\": \"2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-14 22:55:06\",\r\n  \"version\": \"Version de la deductiva ej. 1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{city}}/1",
+									"host": [
+										"{{city}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCity",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{city}}/1",
+									"host": [
+										"{{city}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "siab-clasification",
+					"item": [
+						{
+							"name": "getAllSiabClasifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{siabClasification}}?inicio=1&pageSize=3",
+									"host": [
+										"{{siabClasification}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSiabClasificationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{siabClasification}}/1",
+									"host": [
+										"{{siabClasification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSiabClasification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"typeId\": 1,\r\n  \"typeDescription\": \"Descripcion del tipo\",\r\n  \"subtypeId\": 2,\r\n  \"subtypeDescription\": \"Descripcion del subtipo\",\r\n  \"ssubtypeId\": 2,\r\n  \"ssubtypeDescription\": \"Descripcion del ssubtipo\",\r\n  \"sssubtypeId\": 2,\r\n  \"sssubtypeDescription\": \"Descripcion del ssubtipo\",\r\n  \"creationUser\": \"Antonio\",\r\n  \"version\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{siabClasification}}",
+									"host": [
+										"{{siabClasification}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSiabClasification",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"typeId\": 1,\r\n    \"typeDescription\": \"Descripcion del tipo\",\r\n    \"subtypeId\": 1,\r\n    \"subtypeDescription\": \" ssubtypeDescription \",\r\n    \"ssubtypeId\": 1,\r\n    \"ssubtypeDescription\": \" ssubtypeDescription \"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{siabClasification}}/1",
+									"host": [
+										"{{siabClasification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSiabClasification",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{siabClasification}}/1",
+									"host": [
+										"{{siabClasification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authority",
+					"item": [
+						{
+							"name": "getAllAuthorities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{authoritySae}}?inicio=1&pageSize=3",
+									"host": [
+										"{{authoritySae}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAuthorityById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{authoritySae}}/1",
+									"host": [
+										"{{authoritySae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createAuthority",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idTransferer\": \"Número de transferente ej. 1\",\r\n  \"idIssuer\": \"Número de emisora ej. 1\",\r\n  \"idCity\": \"Número de ciudad\",\r\n  \"authorityName\": \"Nombre de la autoridad\",\r\n  \"codeState\": \"Código de estado\",\r\n  \"creationUser\": \"Usuario que creó el registro\",\r\n  \"creationDate\": \"Fecha de creación ej. 2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"Fecha de modificación ej. 2022-07-14 22:55:06\",\r\n  \"version\": \"Version ej. 1\",\r\n  \"keyState\": \"Clave de estado ej. 1\",\r\n  \"keyUnique\": \"Clave única ej. 1\",\r\n  \"status\": \"Estatus\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{authoritySae}}",
+									"host": [
+										"{{authoritySae}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAuthority",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{authoritySae}}/1",
+									"host": [
+										"{{authoritySae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAuthority",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{authoritySae}}/1",
+									"host": [
+										"{{authoritySae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "affair",
+					"item": [
+						{
+							"name": "getAllAffairs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affairSae}}?inicio=1&pageSize=3",
+									"host": [
+										"{{affairSae}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAffairById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affairSae}}/1",
+									"host": [
+										"{{affairSae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createAffair",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"affair\": \"Descripción del asunto\",\r\n  \"propertyRecord\": \"1\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-07-14 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-14 22:55:06\",\r\n  \"versionUser\": \"Version del usuario\",\r\n  \"referralNoteType\": \"Tipo de volante\",\r\n  \"version\": 1,\r\n  \"status\": 1,\r\n  \"detonationProcess\": \"Proceso detonante\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affairSae}}",
+									"host": [
+										"{{affairSae}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAffair",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"affair\": \"Descripción actualizada\",\r\n  \"propertyRecord\": \"1\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-17 22:55:06\",\r\n  \"versionUser\": \"Version del usuario\",\r\n  \"referralNoteType\": \"Tipo de volante\",\r\n  \"version\": 2,\r\n  \"status\": 0,\r\n  \"detonationProcess\": \"Proceso detonante\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affairSae}}/1",
+									"host": [
+										"{{affairSae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAffair",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{affairSae}}/1",
+									"host": [
+										"{{affairSae}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "legal-affair",
+					"item": [
+						{
+							"name": "getAllLegalAfffairs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{legalAffair}}?inicio=1&pageSize=3",
+									"host": [
+										"{{legalAffair}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLegalAffairById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{legalAffair}}/1",
+									"host": [
+										"{{legalAffair}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createLegalAffair",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{legalAffair}}",
+									"host": [
+										"{{legalAffair}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLegalAffair",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"legalAffair\": \"Legal Affair\",\r\n    \"editionUser\": \"Antonio\",\r\n    \"editionDate\": \"2022-07-15T03:55:06.000Z\",\r\n    \"version\": 0,\r\n    \"status\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{legalAffair}}/1",
+									"host": [
+										"{{legalAffair}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLegalAffair",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{legalAffair}}/1",
+									"host": [
+										"{{legalAffair}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "chatClarification",
+					"item": [
+						{
+							"name": "getAllChatClarifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{chatClarification}}?inicio=1&pageSize=3",
+									"host": [
+										"{{chatClarification}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getChatClarificationById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{chatClarification}}/1",
+									"host": [
+										"{{chatClarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createChatClarification",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idEstatus\": \"1\",\r\n  \"userCapture\": \"Captura de usuario\",\r\n  \"areaUserCapture\": \"Área de captura del usuario\",\r\n  \"satKeyPaper\": \"Clave de oficio del SAT\",\r\n  \"registryNumber\": 1,\r\n  \"idClarificationType\": 1,\r\n  \"saeRequest\": \"Solicitud de sae\",\r\n  \"requestDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"emailWeb\": \"Correo web\",\r\n  \"satClarification\": \"Aclaración SAT\",\r\n  \"clarificationDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"satUniqueKey\": \"Clave única del SAT\",\r\n  \"satTransfererEntity\": 1,\r\n  \"referralNoteNumber\": 1,\r\n  \"xmlPaper\": \"XML oficio de aclaración\",\r\n  \"keyClarificationPaper\": \"Clave oficio de aclarción\",\r\n  \"idClarification\": 1,\r\n  \"process\": \"proceso de aclarción\",\r\n  \"idProperty\": 1,\r\n  \"paperType\": \"Tipo de oficio\",\r\n  \"clarificationOrigin\": \"Origen de aclaración\",\r\n  \"senderUser\": \"Usuario remitente\",\r\n  \"senderName\": \"Nombre remitente\",\r\n  \"recipientName\": \"Nombre destinatario\",\r\n  \"city\": \"Ciudad\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"version\": 1,\r\n  \"idRequestIner\": 1,\r\n  \"errorMessage\": \"Mensaje de error\",\r\n  \"clarificationStatus\": \"Estatus de aclaracion\",\r\n  \"keyUnique\": \"Clave única\",\r\n  \"xmlPaperReponse\": \"XML respuesta de oficio de aclaración\",\r\n  \"messageInterconnection\": \"Mensaje de interconexion\",\r\n  \"idClarificationNotification\": 1,\r\n  \"idPaperResponse\": \"Id doc de res\",\r\n  \"paperDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"folioClarification\": \"Mensaje de interconexion\",\r\n  \"flowId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{chatClarification}}",
+									"host": [
+										"{{chatClarification}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateChatClarification",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idEstatus\": \"1\",\r\n  \"userCapture\": \"Captura de usuario Actualizada\",\r\n  \"areaUserCapture\": \"Área de captura del usuario\",\r\n  \"satKeyPaper\": \"Clave de oficio del SAT\",\r\n  \"registryNumber\": 1,\r\n  \"idClarificationType\": 1,\r\n  \"saeRequest\": \"Solicitud de sae\",\r\n  \"requestDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"emailWeb\": \"Correo web\",\r\n  \"satClarification\": \"Aclaración SAT\",\r\n  \"clarificationDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"satUniqueKey\": \"Clave única del SAT\",\r\n  \"satTransfererEntity\": 1,\r\n  \"referralNoteNumber\": 1,\r\n  \"xmlPaper\": \"XML oficio de aclaración\",\r\n  \"keyClarificationPaper\": \"Clave oficio de aclarción\",\r\n  \"idClarification\": 1,\r\n  \"process\": \"proceso de aclarción\",\r\n  \"idProperty\": 1,\r\n  \"paperType\": \"Tipo de oficio\",\r\n  \"clarificationOrigin\": \"Origen de aclaración\",\r\n  \"senderUser\": \"Usuario remitente\",\r\n  \"senderName\": \"Nombre remitente\",\r\n  \"recipientName\": \"Nombre destinatario\",\r\n  \"city\": \"Ciudad\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"editionDate\": \"2022-07-18T03:55:06.000Z\",\r\n  \"version\": 1,\r\n  \"idRequestIner\": 1,\r\n  \"errorMessage\": \"Mensaje de error\",\r\n  \"clarificationStatus\": \"Estatus de aclaracion\",\r\n  \"keyUnique\": \"Clave única\",\r\n  \"xmlPaperReponse\": \"XML respuesta de oficio de aclaración\",\r\n  \"messageInterconnection\": \"Mensaje de interconexion\",\r\n  \"idClarificationNotification\": 1,\r\n  \"idPaperResponse\": \"Id doc de res\",\r\n  \"paperDate\": \"2022-07-15T03:55:06.000Z\",\r\n  \"folioClarification\": \"Mensaje de interconexion\",\r\n  \"flowId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{chatClarification}}/1",
+									"host": [
+										"{{chatClarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteChatClarification",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{chatClarification}}/1",
+									"host": [
+										"{{chatClarification}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SERA_CAT",
+			"item": [
+				{
+					"name": "lawyer",
+					"item": [
+						{
+							"name": "getAllLawyers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lawyer}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{lawyer}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLawyerById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lawyer}}/2/2",
+									"host": [
+										"{{lawyer}}"
+									],
+									"path": [
+										"2",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createLawyer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 2,\r\n  \"idOffice\": 2,\r\n  \"name\": \"Nombre del abogado\",\r\n  \"street\": \"Calle N\",\r\n  \"streetNumber\": \"exterior\",\r\n  \"apartmentNumber\": \"interior\",\r\n  \"suburb\": \"Colonia\",\r\n  \"delegation\": \"Delegación o municipio\",\r\n  \"zipCode\": 44556,\r\n  \"rfc\": \"RFC del abogado\",\r\n  \"phone\": \"Teléfono\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lawyer}}",
+									"host": [
+										"{{lawyer}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLawyer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idOffice\": 1,\r\n  \"name\": \"Nombre Actualizado\",\r\n  \"street\": \"Calle N\",\r\n  \"streetNumber\": \"exterior\",\r\n  \"apartmentNumber\": \"interior\",\r\n  \"suburb\": \"Colonia\",\r\n  \"delegation\": \"Delegación o municipio\",\r\n  \"zipCode\": 44999,\r\n  \"rfc\": \"RFC del abogado\",\r\n  \"phone\": \"Teléfono\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{lawyer}}/3/1",
+									"host": [
+										"{{lawyer}}"
+									],
+									"path": [
+										"3",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteLawyer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{lawyer}}/2/2",
+									"host": [
+										"{{lawyer}}"
+									],
+									"path": [
+										"2",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getLawyerByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{lawyer}}/search/?text=l",
+									"host": [
+										"{{lawyer}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "l"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "warehouse",
+					"item": [
+						{
+							"name": "getAllWarehouses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{warehouse}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{warehouse}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getWarehouseById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{warehouse}}/3",
+									"host": [
+										"{{warehouse}}"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createWarehouse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción del almacén\",\r\n  \"ubication\": \"Ubicación del almacén\",\r\n  \"manager\": \"Ubicación del almacén\",\r\n  \"registerNumber\": 1,\r\n  \"stateCode\": 1,\r\n  \"cityCode\": 1,\r\n  \"municipalityCode\": 1,\r\n  \"localityCode\": 1,\r\n  \"indActive\": \"1\",\r\n  \"type\": \"Tipo del almacén\",\r\n  \"responsibleDelegation\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{warehouse}}",
+									"host": [
+										"{{warehouse}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateWarehouse",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción del almacén 2\",\r\n  \"ubication\": \"Ubicación del almacén\",\r\n  \"manager\": \"Ubicación del almacén\",\r\n  \"registerNumber\": 2,\r\n  \"stateCode\": 2,\r\n  \"cityCode\": 2,\r\n  \"municipalityCode\": 2,\r\n  \"localityCode\": 2,\r\n  \"indActive\": \"2\",\r\n  \"type\": \"Tipo del almacén\",\r\n  \"responsibleDelegation\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{warehouse}}/1",
+									"host": [
+										"{{warehouse}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteWarehouse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{warehouse}}/3",
+									"host": [
+										"{{warehouse}}"
+									],
+									"path": [
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{warehouse}}/search/?text=aut",
+									"host": [
+										"{{warehouse}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "aut"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "affair",
+					"item": [
+						{
+							"name": "getAllAffairs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affair}}/?inicio=1&pageSize=2",
+									"host": [
+										"{{affair}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAffairById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affair}}/4",
+									"host": [
+										"{{affair}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createAffair",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción del asunto\",\r\n  \"relationPropertyKey\": \"1\",\r\n  \"referralNoteType\": \"1\",\r\n  \"versionUser\": \"1\",\r\n  \"creationUser\": \"Usuario que creó\",\r\n  \"creationDate\": \"2022-06-30 22:55:06\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"2022-06-30 22:55:06\",\r\n  \"idRegister\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affair}}",
+									"host": [
+										"{{affair}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAffair",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción del asunto\",\r\n  \"relationPropertyKey\": \"2\",\r\n  \"referralNoteType\": \"2\",\r\n  \"versionUser\": \"2\",\r\n  \"editionUser\": \"Usuario que realizó modificación\",\r\n  \"modificationDate\": \"2022-07-11 22:55:06\",\r\n  \"idRegister\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affair}}/4",
+									"host": [
+										"{{affair}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAffair",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{affair}}/4",
+									"host": [
+										"{{affair}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "affair-type",
+					"item": [
+						{
+							"name": "getAllAffairTypes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affair-type}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{affair-type}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAffaitById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affair-type}}/100/T",
+									"host": [
+										"{{affair-type}}"
+									],
+									"path": [
+										"100",
+										"T"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createAffairType",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": 2,\r\n  \"relationPropertyKey\": \"1\",\r\n  \"referralNoteType\": \"L\",\r\n  \"versionUser\": \"1\",\r\n  \"idRegister\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affair-type}}",
+									"host": [
+										"{{affair-type}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAffairType",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"relationPropertyKey\": \"2\",\r\n  \"referralNoteType\": \"2\",\r\n  \"versionUser\": \"2\",\r\n  \"idRegister\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{affair-type}}/2",
+									"host": [
+										"{{affair-type}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAffairType",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{affair-type}}/2",
+									"host": [
+										"{{affair-type}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAffairTypeByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{affair-type}}/search/?text=n",
+									"host": [
+										"{{affair-type}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "n"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authority",
+					"item": [
+						{
+							"name": "getAllAuthorities",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{authority}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{authority}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAuthorityById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{authority}}/4",
+									"host": [
+										"{{authority}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createAuthority",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idIssuer\": 1,\r\n  \"idAthority\": 1,\r\n  \"idAuthorityIssuerTransferor\": 1,\r\n  \"authorityDescription\": \"Descripción de la autoridad\",\r\n  \"idCity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{authority}}",
+									"host": [
+										"{{authority}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAuthority",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idIssuer\": 2,\r\n  \"idAthority\": 2,\r\n  \"idAuthorityIssuerTransferor\": 2,\r\n  \"authorityDescription\": \"Descripción modificada\",\r\n  \"idCity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{authority}}/4",
+									"host": [
+										"{{authority}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{authority}}/4",
+									"host": [
+										"{{authority}}"
+									],
+									"path": [
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "coordinating-authority",
+					"item": [
+						{
+							"name": "getAllCoordinatingAuthority",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{coordinatingAuthority}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{coordinatingAuthority}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCoordinatingAuthorityById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{coordinatingAuthority}}/120/1/67",
+									"host": [
+										"{{coordinatingAuthority}}"
+									],
+									"path": [
+										"120",
+										"1",
+										"67"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCoordinatingAuthority",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n  \"idTransferer\": 1,\r\n  \"idIssuer\": 1,\r\n  \"idAthority\": 751,\r\n  \"idAuthorityIssuerTransferor\": 1,\r\n  \"authorityDescription\": \"Descripción de la autoridad\",\r\n  \"idDelegation\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{coordinatingAuthority}}",
+									"host": [
+										"{{coordinatingAuthority}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCoordinatingAuthority",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idIssuer\": 1,\r\n  \"idAthority\": 1,\r\n  \"idAuthorityIssuerTransferor\": 1,\r\n  \"authorityDescription\": \"Descripción actualizada\",\r\n  \"idDelegation\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{coordinatingAuthority}}/120/114/34",
+									"host": [
+										"{{coordinatingAuthority}}"
+									],
+									"path": [
+										"120",
+										"114",
+										"34"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCoordinatingAuthority",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{coordinatingAuthority}}/5",
+									"host": [
+										"{{coordinatingAuthority}}"
+									],
+									"path": [
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCoordinatingAuthorityByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{coordinatingAuthority}}/search/?text=a",
+									"host": [
+										"{{coordinatingAuthority}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "a"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "bank",
+					"item": [
+						{
+							"name": "getAllBanks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bank}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{bank}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBankById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{bank}}/aztec",
+									"host": [
+										"{{bank}}"
+									],
+									"path": [
+										"aztec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createBank",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bankCode\": \"aztec\",\r\n  \"name\": \"Nombre del banco\",\r\n  \"registerNumber\": 1,\r\n  \"ifdsc\": \"ifdsc\",\r\n  \"dateType\": 1,\r\n  \"code\": 1,\r\n  \"idProvider\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bank}}",
+									"host": [
+										"{{bank}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBank",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nombre actualizado\",\r\n  \"registerNumber\": 1,\r\n  \"ifdsc\": \"ifdsc\",\r\n  \"dateType\": 1,\r\n  \"code\": 1,\r\n  \"idProvider\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{bank}}/aztec",
+									"host": [
+										"{{bank}}"
+									],
+									"path": [
+										"aztec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteBank",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{bank}}/aztec",
+									"host": [
+										"{{bank}}"
+									],
+									"path": [
+										"aztec"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "battery",
+					"item": [
+						{
+							"name": "getAllBatteries",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{battery}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{battery}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getBatteryById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{battery}}/2",
+									"host": [
+										"{{battery}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createBattery",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"storeCode\": 1,\r\n  \"description\": \"Descripción del almacén\",\r\n  \"status\": \"0\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{battery}}",
+									"host": [
+										"{{battery}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateBattery",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"storeCode\": 1,\r\n  \"description\": \"Descripción actualizada\",\r\n  \"status\": \"0\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{battery}}/2",
+									"host": [
+										"{{battery}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteBattery",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{battery}}/2",
+									"host": [
+										"{{battery}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "storehouse",
+					"item": [
+						{
+							"name": "getAllStorehouses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{storehouse}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{storehouse}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStorehouseById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{storehouse}}/Identificador",
+									"host": [
+										"{{storehouse}}"
+									],
+									"path": [
+										"Identificador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createStorehouse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idStorehouse\": \"Identificador 1\",\r\n  \"manager\": \"Ubicación de la bodega\",\r\n  \"description\": \"Descripción de la bodega\",\r\n  \"municipality\": 1,\r\n  \"locality\": 1,\r\n  \"ubication\": \"Ubicación de la bodega\",\r\n  \"idEntity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{storehouse}}",
+									"host": [
+										"{{storehouse}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateStorehouse",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"manager\": \"Encargado actualizado\",\r\n  \"description\": \"Descripción de la bodega\",\r\n  \"municipality\": 1,\r\n  \"locality\": 1,\r\n  \"ubication\": \"Ubicación de la bodega\",\r\n  \"idEntity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{storehouse}}/Identificador",
+									"host": [
+										"{{storehouse}}"
+									],
+									"path": [
+										"Identificador"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteStorehouse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{storehouse}}/Identificador",
+									"host": [
+										"{{storehouse}}"
+									],
+									"path": [
+										"Identificador"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "safe",
+					"item": [
+						{
+							"name": "getAllSafes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{safe}}/?inicio=1&pageSize=3",
+									"host": [
+										"{{safe}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSafeById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{safe}}/2",
+									"host": [
+										"{{safe}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSafe",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción de la boveda\",\r\n  \"ubication\": \"Ubicación de la boveda\",\r\n  \"manager\": \"Ubicación de la boveda\",\r\n  \"registerNumber\": 1,\r\n  \"stateCode\": 1,\r\n  \"cityCode\": 1,\r\n  \"municipalityCode\": 1,\r\n  \"localityCode\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{safe}}",
+									"host": [
+										"{{safe}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSafe",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción actualizada\",\r\n  \"ubication\": \"Ubicación de la boveda\",\r\n  \"manager\": \"Ubicación de la boveda\",\r\n  \"registerNumber\": 2,\r\n  \"stateCode\": 2,\r\n  \"cityCode\": 2,\r\n  \"municipalityCode\": 2,\r\n  \"localityCode\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{safe}}/1",
+									"host": [
+										"{{safe}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSafe",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{safe}}/2",
+									"host": [
+										"{{safe}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "question",
+					"item": [
+						{
+							"name": "getAllQuestion",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{question}}?inicio=1&pageSize=3",
+									"host": [
+										"{{question}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getQuestionById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{question}}/1",
+									"host": [
+										"{{question}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createQuestion",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"text\": \"Texto de la pregunta\",\r\n  \"type\": \"Tipo\",\r\n  \"maximumScore\": 10,\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{question}}",
+									"host": [
+										"{{question}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateQuestion",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"text\": \"Texto de la pregunta actualizada\",\r\n  \"type\": \"Tipo\",\r\n  \"maximumScore\": 10,\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{question}}/1",
+									"host": [
+										"{{question}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteQuestion",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{question}}/1",
+									"host": [
+										"{{question}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "origin",
+					"item": [
+						{
+							"name": "getAllOrigins",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{origin}}?inicio=1&pageSize=3",
+									"host": [
+										"{{origin}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOriginById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{origin}}/1",
+									"host": [
+										"{{origin}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createOrigin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idTransferer\": 1,\r\n  \"text\": \"Clave del transferente\",\r\n  \"description\": \"Descripción\",\r\n  \"type\": \"Tipo\",\r\n  \"address\": \"Dirección\",\r\n  \"city\": \"Ciudad\",\r\n  \"idCity\": 1,\r\n  \"keyEntityFederative\": \"Clave Entidad\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{origin}}",
+									"host": [
+										"{{origin}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateOrigin",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"idTransferer\": 1,\r\n  \"text\": \"Clave Actualizada\",\r\n  \"description\": \"Descripción\",\r\n  \"type\": \"Tipo\",\r\n  \"address\": \"Dirección\",\r\n  \"city\": \"Ciudad\",\r\n  \"idCity\": 1,\r\n  \"keyEntityFederative\": \"Clave Entidad\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{origin}}/1",
+									"host": [
+										"{{origin}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteOrigin",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{origin}}/1",
+									"host": [
+										"{{origin}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "origin-cisi",
+					"item": [
+						{
+							"name": "getAllOriginsCisi",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{origin-cisi}}?inicio=1&pageSize=3",
+									"host": [
+										"{{origin-cisi}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getOriginCisiById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{origin-cisi}}/1",
+									"host": [
+										"{{origin-cisi}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createOriginCisi",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"detail\": \"Clave del transferente\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{origin-cisi}}",
+									"host": [
+										"{{origin-cisi}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateOriginCisi",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"detail\": \"Clave actualizada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{origin-cisi}}/2",
+									"host": [
+										"{{origin-cisi}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteOriginCisi",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{origin-cisi}}/2",
+									"host": [
+										"{{origin-cisi}}"
+									],
+									"path": [
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "score",
+					"item": [
+						{
+							"name": "getAllScores",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{score}}?inicio=1&pageSize=3",
+									"host": [
+										"{{score}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{score}}/ej",
+									"host": [
+										"{{score}}"
+									],
+									"path": [
+										"ej"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createScore",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"ej\",\r\n  \"initialRank\": 1,\r\n  \"endRank\": 1,\r\n  \"clasification\": \"Clasificación del puntaje\",\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{score}}",
+									"host": [
+										"{{score}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateScore",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"ej\",\r\n  \"initialRank\": 1,\r\n  \"endRank\": 10,\r\n  \"clasification\": \"Clasificación actualizada\",\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{score}}/ej",
+									"host": [
+										"{{score}}"
+									],
+									"path": [
+										"ej"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteScore",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{score}}/ej",
+									"host": [
+										"{{score}}"
+									],
+									"path": [
+										"ej"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "sise-process",
+					"item": [
+						{
+							"name": "getAllSiseProcess",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{siseProcess}}?inicio=1&pageSize=3",
+									"host": [
+										"{{siseProcess}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSiseProcessById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{siseProcess}}/1",
+									"host": [
+										"{{siseProcess}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSiseProcess",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{siseProcess}}",
+									"host": [
+										"{{siseProcess}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSiseProcess",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"description\": \"Descripción actualizada\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{siseProcess}}/1",
+									"host": [
+										"{{siseProcess}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSiseProcess",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{siseProcess}}/1",
+									"host": [
+										"{{siseProcess}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSiseProcessByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{siseProcess}}/search/?text=In",
+									"host": [
+										"{{siseProcess}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "In"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "service",
+					"item": [
+						{
+							"name": "getAllServices",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service}}?inicio=1&pageSize=3",
+									"host": [
+										"{{service}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getServiceById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service}}/1",
+									"host": [
+										"{{service}}"
+									],
+									"path": [
+										"1"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "typeProcedure",
+											"value": "ee",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createService",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"ser\",\r\n  \"description\": \"Descripción del servicio\",\r\n  \"unaffordabilityCriterion\": \"e\",\r\n  \"subaccount\": \"subc\",\r\n  \"registryNumber\": 1,\r\n  \"cost\": \"costo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service}}",
+									"host": [
+										"{{service}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateService",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"ser\",\r\n  \"description\": \"Descripción ACTUALIZADA\",\r\n  \"unaffordabilityCriterion\": \"F\",\r\n  \"subaccount\": \"subc\",\r\n  \"registryNumber\": 1,\r\n  \"cost\": \"costo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{service}}/ser",
+									"host": [
+										"{{service}}"
+									],
+									"path": [
+										"ser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteService",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{service}}/ser",
+									"host": [
+										"{{service}}"
+									],
+									"path": [
+										"ser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllservicesByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{service}}/search/?text=175567",
+									"host": [
+										"{{service}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "175567"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "series",
+					"item": [
+						{
+							"name": "getAllSeries",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{series}}?inicio=1&pageSize=3",
+									"host": [
+										"{{series}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSeriesByCode",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{series}}/4/sa",
+									"host": [
+										"{{series}}"
+									],
+									"path": [
+										"4",
+										"sa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSeries",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"serie\",\r\n  \"typeProcedure\": \"se\",\r\n  \"description\": \"Descripción del servicio\",\r\n  \"status\": \"0\",\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{series}}/serie",
+									"host": [
+										"{{series}}"
+									],
+									"path": [
+										"serie"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createSeries",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"code\": \"serie8\",\r\n  \"typeProcedure\": \"s1\",\r\n  \"description\": \"Descripción del servicio b\",\r\n  \"status\": \"8\",\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{series}}",
+									"host": [
+										"{{series}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSeries",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{series}}/serie",
+									"host": [
+										"{{series}}"
+									],
+									"path": [
+										"serie"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSearchSeriesByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{series}}/search?text=se",
+									"host": [
+										"{{series}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "se"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "response",
+					"item": [
+						{
+							"name": "getAllResponses",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{response}}?inicio=1&pageSize=3",
+									"host": [
+										"{{response}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getResponseById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{response}}/1",
+									"host": [
+										"{{response}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createResponse",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \r\n  \"id\": 2,\r\n  \"idQuestion\": 1,\r\n  \"text\": \"Texto de la respuesta\",\r\n  \"startValue\": 1,\r\n  \"endValue\": 10,\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{response}}",
+									"host": [
+										"{{response}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateResponse",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \r\n  \"text\": \"Texto de la respuesta ACTUALIZADO\",\r\n  \"startValue\": 1,\r\n  \"endValue\": 10,\r\n  \"registryNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{response}}/4/2",
+									"host": [
+										"{{response}}"
+									],
+									"path": [
+										"4",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteResponse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{response}}/1",
+									"host": [
+										"{{response}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllRequestByText",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "response-repuve",
+					"item": [
+						{
+							"name": "getAllResponsesRepuve",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{responseRepuve}}?inicio=1&pageSize=3",
+									"host": [
+										"{{responseRepuve}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getResponseRepuveById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{responseRepuve}}/1",
+									"host": [
+										"{{responseRepuve}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createReponseRepuve",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción de la respuesta\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{responseRepuve}}",
+									"host": [
+										"{{responseRepuve}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateResponseRepuve",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"Descripción ACTUALIZADA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{responseRepuve}}/1",
+									"host": [
+										"{{responseRepuve}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteResponse",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{responseRepuve}}/1",
+									"host": [
+										"{{responseRepuve}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllRepuveResponseByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{responseRepuve}}/search/?text=digito",
+									"host": [
+										"{{responseRepuve}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "digito"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rack",
+					"item": [
+						{
+							"name": "getAllRacks",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rack}}?inicio=1&pageSize=3",
+									"host": [
+										"{{rack}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getRackById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rack}}/1",
+									"host": [
+										"{{rack}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createRack",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 18,\r\n  \"idWarehouse\": 4,\r\n  \"idBatch\": 1,\r\n  \"description\": \"Descripción del rack\",\r\n  \"status\": \"V\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rack}}",
+									"host": [
+										"{{rack}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateRack",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": 100,\r\n  \"idWarehouse\": 202,\r\n  \"idBatch\": 20,\r\n  \"description\": \"Descripción ACTUALIZADA O\",\r\n  \"status\": \"A\",\r\n  \"registerNumber\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{rack}}/99/281/4",
+									"host": [
+										"{{rack}}"
+									],
+									"path": [
+										"99",
+										"281",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteRack",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{rack}}/1",
+									"host": [
+										"{{rack}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllRacksByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{rack}}/search/?text=INSTALACIONES DE LA ADUANA",
+									"host": [
+										"{{rack}}"
+									],
+									"path": [
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "INSTALACIONES DE LA ADUANA"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "request",
+					"item": [
+						{
+							"name": "getAllRequests",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3003/api/v1/request/?inicio=1&pageSize=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"api",
+										"v1",
+										"request",
+										""
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllRequestByFilter",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"idRequest\": null,\n  \"requestDate\": null,\n  \"nameOfOwner\": null,\n  \"holderCharge\": null,\n  \"noPaper\": null,\n  \"paperDate\": null,\n  \"idRegionalDelegation\": 11,\n  \"keyStateOfRepublic\": null,\n  \"idTransference\": null,\n  \"idStation\": null,\n  \"idAuthority\": null,\n  \"transferenceFile\": null,\n  \"receiptRoute\": null,\n  \"affair\": null,\n  \"typeOfTransfer\": null,\n  \"requestStatus\": \"POR_TURNAR\",\n  \"indicatedTaxpayer\": null,\n  \"circumstantialRecord\": null,\n  \"previousInquiry\": null,\n  \"pageSize\": 3,\n  \"inicio\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3003/api/v1/request/filter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3003",
+									"path": [
+										"api",
+										"v1",
+										"request",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "locker",
+					"item": [
+						{
+							"name": "getAllLockers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{locker}}?inicio=1&pageSize=3",
+									"host": [
+										"{{locker}}"
+									],
+									"query": [
+										{
+											"key": "inicio",
+											"value": "1"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createLocker",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"01\",\r\n    \"numBattery\": 1,\r\n    \"numShelf\": 1,\r\n    \"numLocker\": 2,\r\n    \"description\": \"Prueba de creación 2\",\r\n    \"status\": \"V\",\r\n    \"numRegister\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{locker}}",
+									"host": [
+										"{{locker}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateLocker",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"01\",\r\n    \"numBattery\": 1,\r\n    \"numShelf\": 1,\r\n    \"numLocker\": 2,\r\n    \"description\": \"Prueba de creación 2\",\r\n    \"status\": \"V\",\r\n    \"numRegister\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{locker}}/01/1/1",
+									"host": [
+										"{{locker}}"
+									],
+									"path": [
+										"01",
+										"1",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{locker}}/search?text=a",
+									"host": [
+										"{{locker}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "a"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "r_asunt_dic",
+					"item": [
+						{
+							"name": "getRAffair",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{r_affair_dic}}",
+									"host": [
+										"{{r_affair_dic}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAffairDicByText",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{r_affair_dic}}/search?text=d",
+									"host": [
+										"{{r_affair_dic}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "d"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "REQUEST-API",
+			"item": [
+				{
+					"name": "getRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{request-api}}TURNADO/4/?inicio=1&pageSize=3",
+							"host": [
+								"{{request-api}}TURNADO"
+							],
+							"path": [
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRequestById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{request-api}}4252",
+							"host": [
+								"{{request-api}}4252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRequestsByFilter",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"requestStatus\": \"POR_TURNAR\",\r\n    \"idRegionalDelegation\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{request-api}}filter/?inicio=1&pageSize=1",
+							"host": [
+								"{{request-api}}filter"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "inicio",
+									"value": "1"
+								},
+								{
+									"key": "pageSize",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRequest",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"requestStatus\": \"A TURNAR\",\n    \"targetUserType\": \"TE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{request-api}}4252",
+							"host": [
+								"{{request-api}}4252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 5000,\n  \"idRecord\": \"Identificador del expediente\",\n  \"applicationDate\": \"2022-08-15 22:55:06\",\n  \"receptionDate\": \"2022-08-15 22:55:06\",\n  \"nameOfOwner\": \"Nombre del titular\",\n  \"holderCharge\": \"Cargo del titular\",\n  \"phoneOfOwner\": \"5544337788\",\n  \"emailOfOwner\": \"Email del titular\",\n  \"idTransference\": 624,\n  \"idStation\": 1,\n  \"idAuthority\": 1,\n  \"idRegionalDelegation\": 1,\n  \"sender\": \"Remitente\",\n  \"observations\": \"Observaciones\",\n  \"targetUser\": \"Usuario destino\",\n  \"urgentPriority\": null,\n  \"indicatedTaxpayer\": null,\n  \"transferenceFile\": \"Expediente transferente: ARA470120057\",\n  \"transferEntNotes\": null,\n  \"idAddress\": 25351,\n  \"originInfo\": 2,\n  \"circumstantialRecord\": \"acta_circunstanciada\",\n  \"previousInquiry\": \"averiguacion_previa\",\n  \"lawsuit\": null,\n  \"noProtect\": null,\n  \"tocaPenal\": null,\n  \"noPaper\": \"800-25-00-01-03-2019-31999\",\n  \"paperDate\": \"2019-07-31T05:00:00.000Z\",\n  \"indicated\": null,\n  \"publicMinistry\": null,\n  \"court\": null,\n  \"crime\": null,\n  \"receiptRoute\": \"ELECTRONICA\",\n  \"destinationManagement\": null,\n  \"affair\": 39,\n  \"satDeterminant\": \"800-25-00-01-03-2019\",\n  \"satDirectory\": null,\n  \"satZoneCoordinator\": null,\n  \"userCreated\": \"pepv860106v49\",\n  \"creationDate\": \"2019-08-02T05:00:00.000Z\",\n  \"userModification\": \"amercado\",\n  \"modificationDate\": \"2019-08-22T05:00:00.000Z\",\n  \"typeOfTransfer\": \"SAT_SAE\",\n  \"domainExtinction\": null,\n  \"version\": \"11\",\n  \"targetUserType\": \"TE\",\n  \"trialType\": null,\n  \"typeRecord\": \"PAMA\",\n  \"requestStatus\": \"PAMA\",\n  \"fileLeagueType\": \"CREACION\",\n  \"fileLeagueDate\": \"2019-08-16T05:00:00.000Z\",\n  \"rejectionComment\": null,\n  \"authorityOrdering\": null,\n  \"instanceBpm\": null,\n  \"trial\": null,\n  \"compensationType\": null,\n  \"idStateRequest\": null,\n  \"searchSiab\": null,\n  \"priorityDate\": null,\n  \"numberOfRejections\": 0,\n  \"idRulingDocument\": \"SAE503126\",\n  \"reportSheet\": \"DCCR/DECRE/DRM/ATARM/1470/2019\",\n  \"nameRecipientRuling\": null,\n  \"postRecipientRuling\": \"DELEGACIÓN REGIONAL METROPOLITANA\",\n  \"paragraphOneRuling\": \"parrafo1_dictamen\",\n  \"paragraphTwoRuling\": \"parrafo2_dictamen\",\n  \"nameSignatoryRuling\": \"ANIBAL MERCADO MARTINEZ\",\n  \"postSignatoryRuling\": \"ADMINISTRADOR TITULAR DE ADMINISTRACION Y RECUPERACION METROPOLITANA\",\n  \"ccpRuling\": null,\n  \"rulingCreatorName\": \"EMILIO RODRIGUEZ ESPINO\",\n  \"rulingSheetNumber\": 1470,\n  \"registrationCoordinatorSae\": null,\n  \"emailNotification\": null,\n  \"keyStateOfRepublic\": 9,\n  \"instanceBpel\": 1128877,\n  \"verificationDateCump\": \"2019-08-16T05:00:00.000Z\",\n  \"idRecordTmp\": \"12210\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{request-api}}",
+							"host": [
+								"{{request-api}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "generalStatus",
+			"value": "http://localhost:3000/api/v1/general-status"
+		},
+		{
+			"key": "regionalDelegation",
+			"value": "http://127.0.0.1:3000/api/v1/regional-delegation"
+		},
+		{
+			"key": "stateOfRepublic",
+			"value": "http://127.0.0.1:3000/api/v1/state-of-republic"
+		},
+		{
+			"key": "zipCode",
+			"value": "http://127.0.0.1:3000/api/v1/zip-code"
+		},
+		{
+			"key": "station",
+			"value": "http://localhost:3000/api/v1/station"
+		},
+		{
+			"key": "lawyer",
+			"value": "http://127.0.0.1:3000/api/v1/lawyer"
+		},
+		{
+			"key": "warehouse",
+			"value": "http://127.0.0.1:3000/api/v1/warehouse"
+		},
+		{
+			"key": "deductive",
+			"value": "http://localhost:3001/api/v1/deductive/"
+		},
+		{
+			"key": "deductive-verification",
+			"value": "http://localhost:3001/api/v1/deductive-verification/"
+		},
+		{
+			"key": "delegation-state",
+			"value": "http://localhost:3001/api/v1/delegation-state"
+		},
+		{
+			"key": "affair",
+			"value": "http://localhost:3001/api/v1/affair"
+		},
+		{
+			"key": "affair-type",
+			"value": "http://localhost:3001/api/v1/affair-type"
+		},
+		{
+			"key": "authority",
+			"value": "http://localhost:3001/api/v1/authority"
+		},
+		{
+			"key": "coordinatingAuthority",
+			"value": "http://localhost:3001/api/v1/coordinating-authority"
+		},
+		{
+			"key": "bank",
+			"value": "http://localhost:3001/api/v1/bank"
+		},
+		{
+			"key": "battery",
+			"value": "http://localhost:3001/api/v1/battery"
+		},
+		{
+			"key": "storehouse",
+			"value": "http://localhost:3001/api/v1/storehouse"
+		},
+		{
+			"key": "safe",
+			"value": "http://localhost:3001/api/v1/safe"
+		},
+		{
+			"key": "question",
+			"value": "http://localhost:3001/api/v1/question"
+		},
+		{
+			"key": "origin",
+			"value": "http://localhost:3001/api/v1/origin"
+		},
+		{
+			"key": "origin-cisi",
+			"value": "http://localhost:3001/api/v1/origin-cisi"
+		},
+		{
+			"key": "score",
+			"value": "http://localhost:3001/api/v1/score"
+		},
+		{
+			"key": "siseProcess",
+			"value": "http://localhost:3000/api/v1/sise-process"
+		},
+		{
+			"key": "service",
+			"value": "http://localhost:3000/api/v1/service-cat"
+		},
+		{
+			"key": "series",
+			"value": "http://localhost:3001/api/v1/series"
+		},
+		{
+			"key": "response",
+			"value": "http://localhost:3001/api/v1/response"
+		},
+		{
+			"key": "responseRepuve",
+			"value": "http://localhost:3001/api/v1/response-repuve"
+		},
+		{
+			"key": "rack",
+			"value": "http://localhost:3001/api/v1/rack"
+		},
+		{
+			"key": "clarification",
+			"value": "http://localhost:3001/api/v1/clarification"
+		},
+		{
+			"key": "settlement",
+			"value": "http://127.0.0.1:3001/api/v1/settlement"
+		},
+		{
+			"key": "city",
+			"value": "http://127.0.0.1:3001/api/v1/city"
+		},
+		{
+			"key": "siabClasification",
+			"value": "http://127.0.0.1:3001/api/v1/siab-clasification"
+		},
+		{
+			"key": "authoritySae",
+			"value": "http://127.0.0.1:3001/api/v1/authority-sae"
+		},
+		{
+			"key": "affairSae",
+			"value": "http://localhost:3001/api/v1/affair-sae"
+		},
+		{
+			"key": "legalAffair",
+			"value": "http://localhost:3001/api/v1/legal-affair"
+		},
+		{
+			"key": "chatClarification",
+			"value": "http://localhost:3001/api/v1/chat-clarification"
+		},
+		{
+			"key": "holid",
+			"value": "http://localhost:3000/api/v1/holiday"
+		},
+		{
+			"key": "request",
+			"value": "http://localhost:3003\n/api/v1/request"
+		},
+		{
+			"key": "locker",
+			"value": "http://localhost:3000/api/v1/locker"
+		},
+		{
+			"key": "r_affair_dic",
+			"value": "http://localhost:3000/api/v1/r-asunt-dic"
+		},
+		{
+			"key": "request-api",
+			"value": "http://localhost:3003/api/v1/request/"
+		}
+	]
+}
