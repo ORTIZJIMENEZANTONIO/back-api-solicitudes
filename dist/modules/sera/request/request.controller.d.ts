@@ -5,11 +5,7 @@ import { RequestService } from './request.service';
 export declare class RequestController {
     private readonly requestService;
     constructor(requestService: RequestService);
-    createRequest(requestDto: RequestDto): Promise<(RequestDto & import("./entity/request.entity").RequestEntity) | {
-        statusCode: number;
-        message: string;
-        error: string;
-    }>;
+    createRequest(requestDto: RequestDto): Promise<(RequestDto & import("./entity/request.entity").RequestEntity) | "Error">;
     getAllRequests(requestStatus: string, idRegionalDelegation: number, pagination: PaginationDto): Promise<{
         data: import("./entity/request.entity").RequestEntity[];
         count: number;
@@ -32,13 +28,5 @@ export declare class RequestController {
         message: string;
         error: string;
     }>;
-    deleteRequest(id: number): Promise<{
-        statusCode: string;
-        message: string;
-        error: string;
-    } | {
-        statusCode: string;
-        message: string;
-        error?: undefined;
-    }>;
+    deleteRequest(id: number): Promise<string>;
 }

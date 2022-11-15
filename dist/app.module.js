@@ -9,49 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const nest_winston_1 = require("nest-winston");
-const winston = require("winston");
-const path = require("path");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const config_service_1 = require("./shared/config/config.service");
-const evaluation_module_1 = require("./modules/sera/evaluation/evaluation.module");
-const evaluation_by_property_module_1 = require("./modules/sera/evaluation-by-property/evaluation-by-property.module");
+const request_module_1 = require("./modules/sera/request/request.module");
+const core_1 = require("@nestjs/core");
+const exception_interceptor_1 = require("./core/exception.interceptor");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             typeorm_1.TypeOrmModule.forRoot(config_service_1.configService.getTypeOrmConfig()),
-            nest_winston_1.WinstonModule.forRoot({
-                level: 'debug',
-                format: winston.format.combine(winston.format.timestamp({
-                    format: 'YYYY-MM-DD HH:mm:ss',
-                }), winston.format.errors({ stack: true }), winston.format.splat(), winston.format.json()),
-                transports: [
-                    new winston.transports.File({
-                        dirname: path.join(__dirname, './../log/debug/'),
-                        filename: 'debug.log',
-                        level: 'debug',
-                    }),
-                    new winston.transports.File({
-                        dirname: path.join(__dirname, './../log/error/'),
-                        filename: 'error.log',
-                        level: 'error',
-                    }),
-                    new winston.transports.File({
-                        dirname: path.join(__dirname, './../log/info/'),
-                        filename: 'info.log',
-                        level: 'info',
-                    }),
-                    new winston.transports.Console({ level: 'debug' }),
-                ],
-            }),
-            evaluation_module_1.EvaluationModule,
-            evaluation_by_property_module_1.EvaluationByPropertyModule,
+            request_module_1.RequestModule
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, { provide: core_1.APP_FILTER, useClass: exception_interceptor_1.AllExceptionsFilter }],
     })
 ], AppModule);
 exports.AppModule = AppModule;

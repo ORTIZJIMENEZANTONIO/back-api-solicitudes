@@ -27,12 +27,12 @@ class ConfigService {
             database: this.getValue('POSTGRES_DB'),
             entities: ['dist/**/*.entity.js'],
             synchronize: false,
-            ssl: false,
+            ssl: true,
             extra: {
                 ssl: {
                     rejectUnauthorized: false,
                 },
-            }
+            },
         };
     }
 }

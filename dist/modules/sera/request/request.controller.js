@@ -16,6 +16,7 @@ exports.RequestController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const pagination_dto_1 = require("../../../shared/dto/pagination.dto");
+const message_1 = require("../../../shared/validation-messages/message");
 const filter_request_dto_1 = require("./dto/filter-request.dto");
 const request_dto_1 = require("./dto/request.dto");
 const request_service_1 = require("./request.service");
@@ -24,10 +25,8 @@ let RequestController = class RequestController {
         this.requestService = requestService;
     }
     async createRequest(requestDto) {
-        const requestCreated = await this.requestService.createRequest(requestDto);
-        return requestCreated
-            ? requestCreated
-            : { statusCode: 503, message: "This Request was not created", error: "Create Error" };
+        const task = await this.requestService.createRequest(requestDto);
+        return task !== null && task !== void 0 ? task : 'Error';
     }
     async getAllRequests(requestStatus, idRegionalDelegation, pagination) {
         return await this.requestService.getAllRequests({ requestStatus, idRegionalDelegation }, pagination);
@@ -48,10 +47,8 @@ let RequestController = class RequestController {
             : { statusCode: '404', message: 'Request not found', error: "Not found" };
     }
     async deleteRequest(id) {
-        const { affected } = await this.requestService.deleteRequest(id);
-        return affected == 0
-            ? { statusCode: '404', message: 'Request not found', error: "Not found" }
-            : { statusCode: '200', message: "Successfully deleted" };
+        const affected = await this.requestService.deleteRequest(id);
+        return affected ? message_1.Message.DELETED() : 'Error';
     }
 };
 __decorate([
@@ -75,17 +72,25 @@ __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Obtener lista de todas las solicitudes' }),
     (0, swagger_1.ApiParam)({
         name: 'requestStatus',
+        type: String,
         description: 'Estatus'
     }),
     (0, swagger_1.ApiParam)({
         name: 'idRegionalDelegation',
+        type: Number,
         description: 'Identificador de la delegación regional'
     }),
     (0, swagger_1.ApiQuery)({
-        name: 'inicio'
+        name: 'inicio',
+        type: Number,
+        required: false,
+        example: 1,
     }),
     (0, swagger_1.ApiQuery)({
-        name: 'pageSize'
+        name: 'pageSize',
+        type: Number,
+        required: false,
+        example: 5,
     }),
     (0, swagger_1.ApiResponse)({
         status: 200,
@@ -118,6 +123,7 @@ __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Obtener solicitud por su id' }),
     (0, swagger_1.ApiParam)({
         name: 'id',
+        type: Number,
         description: 'Identificador de la solicitud'
     }),
     (0, swagger_1.ApiResponse)({
@@ -135,6 +141,7 @@ __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Modificar solicitud' }),
     (0, swagger_1.ApiParam)({
         name: 'idToUpdate',
+        type: Number,
         description: 'Identificador numérico de la solicitud'
     }),
     (0, swagger_1.ApiBody)({
@@ -152,6 +159,7 @@ __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Borrar solicitud por su id' }),
     (0, swagger_1.ApiParam)({
         name: 'id',
+        type: Number,
         description: 'Identificador de la solicitud a borrar'
     }),
     (0, swagger_1.ApiResponse)({

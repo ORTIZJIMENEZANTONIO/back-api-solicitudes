@@ -10,23 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PaginationDto = void 0;
+const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
+const message_1 = require("../validation-messages/message");
 class PaginationDto {
 }
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    (0, class_validator_1.IsPositive)(),
+    (0, class_transformer_1.Type)(() => Number),
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)({}, { message: message_1.Message.NUMBER('$property') }),
+    (0, class_validator_1.IsPositive)({
+        message: message_1.Message.POSITIVE(`$property`),
+    }),
     __metadata("design:type", Number)
 ], PaginationDto.prototype, "inicio", void 0);
 __decorate([
-    (0, class_validator_1.IsNumber)(),
-    (0, class_validator_1.IsPositive)(),
+    (0, class_transformer_1.Type)(() => Number),
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)({}, { message: message_1.Message.NUMBER('$property') }),
+    (0, class_validator_1.IsPositive)({
+        message: message_1.Message.POSITIVE(`$property`),
+    }),
     __metadata("design:type", Number)
 ], PaginationDto.prototype, "pageSize", void 0);
 __decorate([
     (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)({ message: message_1.Message.STRING('$property') }),
     __metadata("design:type", String)
 ], PaginationDto.prototype, "text", void 0);
 exports.PaginationDto = PaginationDto;

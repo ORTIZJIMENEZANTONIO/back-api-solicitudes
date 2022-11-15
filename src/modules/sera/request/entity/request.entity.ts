@@ -10,10 +10,10 @@ import {
 export class RequestEntity {
   @ApiProperty({ example: 'Identificador de solicitud' })
   @PrimaryGeneratedColumn ({ 
-    type: 'number',
+    type: 'integer',
     name: "id_solicitud" 
   })
-  id: number;
+  id?: number | null;
 
   @ApiProperty({ example: 'Identificador del expediente' })
   @Column("numeric", { name: "id_expediente", nullable: true })

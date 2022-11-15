@@ -1,12 +1,25 @@
-import { IsNumber, IsPositive, IsOptional } from 'class-validator';
-export class PaginationDto {
-    @IsNumber()
-    @IsPositive()
-    @IsOptional()
-    inicio: number;
+import { Type } from 'class-transformer';
+import { IsNumber, IsPositive, IsOptional, IsString } from 'class-validator';
+import { Message } from '../validation-messages/message';
 
-    @IsNumber()
-    @IsPositive()
-    @IsOptional()
-    pageSize: number;
-}   
+export class PaginationDto {
+  @Type(() => Number)
+  @IsOptional()
+  @IsNumber({}, { message: Message.NUMBER('$property') })
+  @IsPositive({
+    message: Message.POSITIVE(`$property`),
+  })
+  inicio: number;
+
+  @Type(() => Number)
+  @IsOptional()
+  @IsNumber({}, { message: Message.NUMBER('$property') })
+  @IsPositive({
+    message: Message.POSITIVE(`$property`),
+  })
+  pageSize: number;
+
+  @IsOptional()
+  @IsString({ message: Message.STRING('$property') })
+  text?: string | null;
+}

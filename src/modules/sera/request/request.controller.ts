@@ -19,6 +19,7 @@ import {
 } from '@nestjs/swagger';
 
 import { PaginationDto } from 'src/shared/dto/pagination.dto';
+import { Message } from 'src/shared/validation-messages/message';
 import { FilterRequestDto } from './dto/filter-request.dto';
 import { RequestDto } from './dto/request.dto';
 import { RequestService } from './request.service';
@@ -44,26 +45,32 @@ export class RequestController {
   })
   @Post()
   async createRequest(@Body() requestDto: RequestDto) {
-    const requestCreated = await this.requestService.createRequest(requestDto);
-    return requestCreated
-      ? requestCreated
-      : { statusCode: 503, message: "This Request was not created", error: "Create Error" };
+    const task = await this.requestService.createRequest(requestDto);
+    return task ?? 'Error';
   }
 
   @ApiOperation({ summary: 'Obtener lista de todas las solicitudes' })
   @ApiParam({
     name: 'requestStatus',
+    type: String,
     description: 'Estatus'
   })
   @ApiParam({
     name: 'idRegionalDelegation',
+    type: Number,
     description: 'Identificador de la delegación regional'
   })
   @ApiQuery({
-    name: 'inicio'
+    name: 'inicio',
+    type: Number,
+    required: false,
+    example: 1,
   })
   @ApiQuery({
-    name: 'pageSize'
+    name: 'pageSize',
+    type: Number,
+    required: false,
+    example: 5,
   })
   @ApiResponse({
     status: 200,
@@ -89,6 +96,7 @@ export class RequestController {
   @ApiOperation({ summary: 'Obtener solicitud por su id' })
   @ApiParam({
     name: 'id',
+    type: Number,
     description: 'Identificador de la solicitud'
   })
   @ApiResponse({
@@ -107,6 +115,7 @@ export class RequestController {
   @ApiOperation({ summary: 'Modificar solicitud' })
   @ApiParam({
     name: 'idToUpdate',
+    type: Number,
     description: 'Identificador numérico de la solicitud'
   })
   @ApiBody({
@@ -124,6 +133,7 @@ export class RequestController {
   @ApiOperation({ summary: 'Borrar solicitud por su id' })
   @ApiParam({
     name: 'id',
+    type: Number,
     description: 'Identificador de la solicitud a borrar'
   })
   @ApiResponse({
@@ -133,10 +143,8 @@ export class RequestController {
   })
   @Delete(":id")
   async deleteRequest(@Param("id") id: number) {
-    const { affected } = await this.requestService.deleteRequest(id);
-    return affected == 0
-      ? { statusCode: '404', message: 'Request not found', error: "Not found" }
-      : { statusCode: '200', message: "Successfully deleted" };
+    const affected = await this.requestService.deleteRequest(id);
+    return affected ? Message.DELETED() : 'Error';
   }
 
 

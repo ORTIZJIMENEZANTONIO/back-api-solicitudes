@@ -16,7 +16,10 @@ let RequestEntity = class RequestEntity {
 };
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 'Identificador de solicitud' }),
-    (0, typeorm_1.PrimaryColumn)("numeric", { name: "id_solicitud" }),
+    (0, typeorm_1.PrimaryGeneratedColumn)({
+        type: 'integer',
+        name: "id_solicitud"
+    }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "id", void 0);
 __decorate([

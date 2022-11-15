@@ -1,5 +1,5 @@
 export declare class RequestDto {
-    id: number;
+    id?: number | null;
     idRecord: number | null;
     applicationDate: Date | null;
     receptionDate: Date | null;

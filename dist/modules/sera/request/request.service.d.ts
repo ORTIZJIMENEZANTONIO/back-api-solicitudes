@@ -1,11 +1,11 @@
-import { Repository } from 'typeorm';
-import { RequestEntity } from './entity/request.entity';
-import { RequestDto } from './dto/request.dto';
-import { PaginationDto } from 'src/shared/dto/pagination.dto';
-import { FilterRequestDto } from './dto/filter-request.dto';
+import { Repository } from "typeorm";
+import { RequestEntity } from "./entity/request.entity";
+import { RequestDto } from "./dto/request.dto";
+import { PaginationDto } from "src/shared/dto/pagination.dto";
+import { FilterRequestDto } from "./dto/filter-request.dto";
 export declare class RequestService {
-    private requestRepository;
-    constructor(requestRepository: Repository<RequestEntity>);
+    private entity;
+    constructor(entity: Repository<RequestEntity>);
     createRequest(requestDto: RequestDto): Promise<RequestDto & RequestEntity>;
     getAllRequests(filter: FilterRequestDto, { inicio, pageSize }: PaginationDto): Promise<{
         data: RequestEntity[];
@@ -17,5 +17,5 @@ export declare class RequestService {
     }>;
     getRequestById(id: number): Promise<RequestEntity>;
     updateRequest(id: number, requestDto: RequestDto): Promise<import("typeorm").UpdateResult>;
-    deleteRequest(id: number): Promise<import("typeorm").DeleteResult>;
+    deleteRequest(id: number): Promise<number>;
 }

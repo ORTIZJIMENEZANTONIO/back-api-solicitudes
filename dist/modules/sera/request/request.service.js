@@ -24,15 +24,18 @@ const regional_delegation_entity_1 = require("../../../shared/entity/sae/regiona
 const affair_entity_1 = require("../../../shared/entity/sera/affair.entity");
 const state_of_republic_entity_1 = require("../../../shared/entity/sera/state-of-republic.entity");
 const domicile_entity_1 = require("../../../shared/entity/sae/domicile.entity");
+const message_1 = require("../../../shared/validation-messages/message");
 let RequestService = class RequestService {
-    constructor(requestRepository) {
-        this.requestRepository = requestRepository;
+    constructor(entity) {
+        this.entity = entity;
     }
     async createRequest(requestDto) {
-        return await this.requestRepository.save(requestDto);
+        delete requestDto.id;
+        return await this.entity.save(requestDto);
     }
     async getAllRequests(filter, { inicio, pageSize }) {
-        const res = await this.requestRepository.createQueryBuilder("request")
+        const res = await this.entity
+            .createQueryBuilder("request")
             .select([
             "request.id",
             "request.applicationDate",
@@ -65,16 +68,17 @@ let RequestService = class RequestService {
             .innerJoinAndMapOne("request.keyStateOfRepublic", state_of_republic_entity_1.StateOfRepublicEntity, "stateOfRepublic", "stateOfRepublic.cveState = request.keyStateOfRepublic")
             .where(filter)
             .take(pageSize || 10)
-            .orderBy('request.id', 'DESC')
+            .orderBy("request.id", "DESC")
             .skip((inicio - 1) * pageSize || 0)
             .getManyAndCount();
         return {
             data: res[0],
-            count: res[1]
+            count: res[1],
         };
     }
     async getRequestsByFilter(filter, { inicio, pageSize }) {
-        const res = await this.requestRepository.createQueryBuilder("request")
+        const res = await this.entity
+            .createQueryBuilder("request")
             .innerJoinAndMapOne("request.idTransference", transferent_entity_1.TransferentEntity, "transferer", "transferer.id = request.idTransference ")
             .innerJoinAndMapOne("request.idStation", station_entity_1.StationEntity, "station", "station.id = request.idStation")
             .innerJoinAndMapOne("request.idAuthority", authority_entity_1.AuthorityEntity, "authority", "authority.idAthority = request.idAuthority")
@@ -84,16 +88,17 @@ let RequestService = class RequestService {
             .innerJoinAndMapOne("request.idAddress", domicile_entity_1.DomicileEntity, "domicile", "domicile.idDomicile = request.idAddress")
             .where(filter)
             .take(pageSize || 10)
-            .orderBy('request.id', 'DESC')
+            .orderBy("request.id", "DESC")
             .skip((inicio - 1) * pageSize || 0)
             .getManyAndCount();
         return {
             data: res[0],
-            count: res[1]
+            count: res[1],
         };
     }
     async getRequestById(id) {
-        return await this.requestRepository.createQueryBuilder("request")
+        return await this.entity
+            .createQueryBuilder("request")
             .innerJoinAndMapOne("request.idTransference", transferent_entity_1.TransferentEntity, "transferer", "transferer.id = request.idTransference ")
             .innerJoinAndMapOne("request.idStation", station_entity_1.StationEntity, "station", "station.id = request.idStation")
             .innerJoinAndMapOne("request.idAuthority", authority_entity_1.AuthorityEntity, "authority", "authority.idAthority = request.idAuthority")
@@ -105,10 +110,19 @@ let RequestService = class RequestService {
             .getOne();
     }
     async updateRequest(id, requestDto) {
-        return await this.requestRepository.update(id, requestDto);
+        const element = await this.entity.findOne({ where: { id: id } });
+        if (!element) {
+            throw new common_1.HttpException(message_1.Message.NOT_FOUND(), common_1.HttpStatus.NOT_FOUND);
+        }
+        delete requestDto.id;
+        return await this.entity.update(id, requestDto);
     }
     async deleteRequest(id) {
-        return await this.requestRepository.delete(id);
+        const { affected } = await this.entity.delete(id);
+        if (affected == 0) {
+            throw new common_1.HttpException(message_1.Message.NOT_FOUND(), common_1.HttpStatus.NOT_FOUND);
+        }
+        return affected;
     }
 };
 RequestService = __decorate([

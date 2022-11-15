@@ -1,31 +1,39 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { ResponseInterceptor } from './core/response.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v1');
+  app.enableCors({ origin: '*' });
+
+  const moduleRef = app.select(AppModule);
+  const reflector = moduleRef.get(Reflector);
+  app.useGlobalInterceptors(new ResponseInterceptor(reflector));
+
   // Configurar títulos de documnentación
-  const options = new DocumentBuilder() 
-    .setTitle('SIGEBI PROCEDURES REST API')
-    .setDescription('API REST DE SIGEBI PROCEDURES')
+  const options = new DocumentBuilder()
+    .addBearerAuth()
+    .setTitle('SIGEBI SOLICITUDES')
+    .setDescription('API REST DE SOLICITUDES')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  
+
   // La ruta en que se sirve la documentación
   SwaggerModule.setup('api', app, document);
 
-  app.enableCors();
-  app.useGlobalPipes(new ValidationPipe(
-    {
+  app.useGlobalPipes(
+    new ValidationPipe({
       transform: true,
-      transformOptions:{
-        enableImplicitConversion: true
-      }
-    }
-  ));
+      whitelist: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      },
+    }),
+  );
   
   app.listen(3003);
   // Solicitudes 3003
