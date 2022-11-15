@@ -24,7 +24,7 @@ __decorate([
     __metadata("design:type", Number)
 ], FilterRequestDto.prototype, "id", void 0);
 __decorate([
-    (0, class_transformer_1.Type)(() => String),
+    (0, class_transformer_1.Type)(() => Date),
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsDate)({
         message: message_1.Message.IsDate("$property"),
@@ -63,7 +63,7 @@ __decorate([
     __metadata("design:type", String)
 ], FilterRequestDto.prototype, "noPaper", void 0);
 __decorate([
-    (0, class_transformer_1.Type)(() => String),
+    (0, class_transformer_1.Type)(() => Date),
     (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsDate)({
         message: message_1.Message.IsDate("$property"),

@@ -19,7 +19,7 @@ export class FilterRequestDto {
   @ApiProperty({ example: 1 })
   id?: number | null;
 
-  @Type(() => String)
+  @Type(() => Date)
   @IsOptional()
   @IsDate({
     message: Message.IsDate("$property"),
@@ -54,7 +54,7 @@ export class FilterRequestDto {
   @ApiProperty({ example: "800-25-00-01-03-2019-31999" })
   noPaper?: string | null;
 
-  @Type(() => String)
+  @Type(() => Date)
   @IsOptional()
   @IsDate({
     message: Message.IsDate("$property"),
