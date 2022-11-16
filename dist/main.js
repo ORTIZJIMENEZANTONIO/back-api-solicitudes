@@ -7,19 +7,20 @@ const common_1 = require("@nestjs/common");
 const response_interceptor_1 = require("./core/response.interceptor");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
-    app.setGlobalPrefix('api/v1');
-    app.enableCors({ origin: '*' });
+    app.setGlobalPrefix("api/v1");
+    app.enableCors({ origin: "*" });
+    const port = 3003;
     const moduleRef = app.select(app_module_1.AppModule);
     const reflector = moduleRef.get(core_1.Reflector);
     app.useGlobalInterceptors(new response_interceptor_1.ResponseInterceptor(reflector));
     const options = new swagger_1.DocumentBuilder()
         .addBearerAuth()
-        .setTitle('SIGEBI SOLICITUDES')
-        .setDescription('API REST DE SOLICITUDES')
-        .setVersion('1.0')
+        .setTitle("SIGEBI SOLICITUDES")
+        .setDescription("API REST DE SOLICITUDES")
+        .setVersion("1.0")
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, options);
-    swagger_1.SwaggerModule.setup('api', app, document);
+    swagger_1.SwaggerModule.setup("api", app, document);
     app.useGlobalPipes(new common_1.ValidationPipe({
         transform: true,
         whitelist: true,
@@ -27,7 +28,8 @@ async function bootstrap() {
             enableImplicitConversion: true,
         },
     }));
-    app.listen(3003);
+    app.listen(port);
+    console.log(`Listening in port: ${port}`);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

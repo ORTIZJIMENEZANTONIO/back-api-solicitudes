@@ -1,39 +1,34 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { 
-  Column, 
-  Entity, 
-  PrimaryColumn, 
-  PrimaryGeneratedColumn 
-} from "typeorm";
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("solicitudes", { schema: "sera" })
 export class RequestEntity {
-  @ApiProperty({ example: 'Identificador de solicitud' })
-  @PrimaryGeneratedColumn ({ 
-    type: 'integer',
-    name: "id_solicitud" 
+  @ApiProperty({ example: "Identificador de solicitud" })
+  @PrimaryGeneratedColumn({
+    type: "integer",
+    name: "id_solicitud",
   })
   id?: number | null;
 
-  @ApiProperty({ example: 'Identificador del expediente' })
+  @ApiProperty({ example: "Identificador del expediente" })
   @Column("numeric", { name: "id_expediente", nullable: true })
   idRecord: number | null;
 
-  @ApiProperty({ example: '2022-08-15 22:55:06' })
+  @ApiProperty({ example: "2022-08-15 22:55:06" })
   @Column("timestamp without time zone", {
     name: "fecha_solicitud",
     nullable: true,
   })
   applicationDate: Date | null;
 
-  @ApiProperty({ example: '2022-08-15 22:55:06' })
+  @ApiProperty({ example: "2022-08-15 22:55:06" })
   @Column("timestamp without time zone", {
     name: "fecha_recepcion",
     nullable: true,
   })
   receptionDate: Date | null;
 
-  @ApiProperty({ example: 'Nombre del titular' })
+  @ApiProperty({ example: "Nombre del titular" })
   @Column("character varying", {
     name: "nombre_titular",
     nullable: true,
@@ -41,7 +36,7 @@ export class RequestEntity {
   })
   nameOfOwner: string | null;
 
-  @ApiProperty({ example: 'Cargo del titular' })
+  @ApiProperty({ example: "Cargo del titular" })
   @Column("character varying", {
     name: "cargo_titular",
     nullable: true,
@@ -49,7 +44,7 @@ export class RequestEntity {
   })
   holderCharge: string | null;
 
-  @ApiProperty({ example: '5544337788' })
+  @ApiProperty({ example: "5544337788" })
   @Column("character varying", {
     name: "telefono_titular",
     nullable: true,
@@ -57,7 +52,7 @@ export class RequestEntity {
   })
   phoneOfOwner: string | null;
 
-  @ApiProperty({ example: 'Email del titular' })
+  @ApiProperty({ example: "Email del titular" })
   @Column("character varying", {
     name: "email_titular",
     nullable: true,
@@ -65,23 +60,23 @@ export class RequestEntity {
   })
   emailOfOwner: string | null;
 
-  @ApiProperty({ example: '624' })
+  @ApiProperty({ example: "624" })
   @Column("numeric", { name: "id_transferente", nullable: true })
   idTransference: number | null;
 
-  @ApiProperty({ example: '1' })
+  @ApiProperty({ example: "1" })
   @Column("numeric", { name: "id_emisora", nullable: true })
   idStation: number | null;
 
-  @ApiProperty({ example: '1' })
+  @ApiProperty({ example: "1" })
   @Column("numeric", { name: "id_autoridad", nullable: true })
   idAuthority: number | null;
 
-  @ApiProperty({ example: '1' })
+  @ApiProperty({ example: "1" })
   @Column("numeric", { name: "id_delegacion_regional", nullable: true })
   idRegionalDelegation: number | null;
 
-  @ApiProperty({ example: 'Remitente' })
+  @ApiProperty({ example: "Remitente" })
   @Column("character varying", {
     name: "remitente",
     nullable: true,
@@ -89,7 +84,7 @@ export class RequestEntity {
   })
   sender: string | null;
 
-  @ApiProperty({ example: 'Observaciones' })
+  @ApiProperty({ example: "Observaciones" })
   @Column("character varying", {
     name: "observaciones",
     nullable: true,
@@ -97,7 +92,7 @@ export class RequestEntity {
   })
   observations: string | null;
 
-  @ApiProperty({ example: 'Usuario destino' })
+  @ApiProperty({ example: "Usuario destino" })
   @Column("character varying", {
     name: "usuario_destino",
     nullable: true,
@@ -117,7 +112,7 @@ export class RequestEntity {
   })
   indicatedTaxpayer: string | null;
 
-  @ApiProperty({ example: 'ARA470120057' })
+  @ApiProperty({ example: "ARA470120057" })
   @Column("character varying", {
     name: "expediente_transferente",
     nullable: true,
@@ -133,15 +128,15 @@ export class RequestEntity {
   })
   transferEntNotes: string | null;
 
-  @ApiProperty({ example: '25351' })
+  @ApiProperty({ example: "25351" })
   @Column("numeric", { name: "id_direccion", nullable: true })
   idAddress: number | null;
 
-  @ApiProperty({ example: '2' })
+  @ApiProperty({ example: "2" })
   @Column("numeric", { name: "procedencia_info", nullable: true })
   originInfo: number | null;
 
-  @ApiProperty({ example: 'acta_circunstanciada' })
+  @ApiProperty({ example: "acta_circunstanciada" })
   @Column("character varying", {
     name: "acta_circunstanciada",
     nullable: true,
@@ -149,7 +144,7 @@ export class RequestEntity {
   })
   circumstantialRecord: string | null;
 
-  @ApiProperty({ example: 'averiguacion_previa' })
+  @ApiProperty({ example: "averiguacion_previa" })
   @Column("character varying", {
     name: "averiguacion_previa",
     nullable: true,
@@ -181,7 +176,7 @@ export class RequestEntity {
   })
   tocaPenal: string | null;
 
-  @ApiProperty({ example: '800-25-00-01-03-2019-31999' })
+  @ApiProperty({ example: "800-25-00-01-03-2019-31999" })
   @Column("character varying", {
     name: "no_oficio",
     nullable: true,
@@ -189,7 +184,7 @@ export class RequestEntity {
   })
   noPaper: string | null;
 
-  @ApiProperty({ example: '2019-07-31T05:00:00.000Z' })
+  @ApiProperty({ example: "2019-07-31T05:00:00.000Z" })
   @Column("timestamp without time zone", {
     name: "fecha_oficio",
     nullable: true,
@@ -220,7 +215,7 @@ export class RequestEntity {
   @Column("character varying", { name: "delito", nullable: true, length: 100 })
   crime: string | null;
 
-  @ApiProperty({ example: 'ELECTRONICA' })
+  @ApiProperty({ example: "ELECTRONICA" })
   @Column("character varying", {
     name: "via_recepcion",
     nullable: true,
@@ -236,11 +231,11 @@ export class RequestEntity {
   })
   destinationManagement: string | null;
 
-  @ApiProperty({ example: '39' })
+  @ApiProperty({ example: "39" })
   @Column("numeric", { name: "asunto", nullable: true })
   affair: number | null;
 
-  @ApiProperty({ example: '800-25-00-01-03-2019' })
+  @ApiProperty({ example: "800-25-00-01-03-2019" })
   @Column("character varying", {
     name: "sat_determinante",
     nullable: true,
@@ -264,7 +259,7 @@ export class RequestEntity {
   })
   satZoneCoordinator: string | null;
 
-  @ApiProperty({ example: 'pepv860106v49' })
+  @ApiProperty({ example: "pepv860106v49" })
   @Column("character varying", {
     name: "usuario_creacion",
     nullable: true,
@@ -310,11 +305,11 @@ export class RequestEntity {
   })
   domainExtinction: string | null;
 
-  @ApiProperty({ example: '11' })
+  @ApiProperty({ example: "11" })
   @Column("numeric", { name: "version", nullable: true })
   version: string | null;
 
-  @ApiProperty({ example: 'TE' })
+  @ApiProperty({ example: "TE" })
   @Column("character varying", {
     name: "tipo_usuario_destino",
     nullable: true,
@@ -399,7 +394,7 @@ export class RequestEntity {
 
   @ApiProperty({ example: null })
   @Column("numeric", { name: "id_solicitud_bienes", nullable: true })
-  idStateRequest: string | null;
+  idStateRequest: number| null;
 
   @ApiProperty({ example: null })
   @Column("numeric", { name: "busqueda_siab", nullable: true })
@@ -472,7 +467,10 @@ export class RequestEntity {
   })
   nameSignatoryRuling: string | null;
 
-  @ApiProperty({ example: "ADMINISTRADOR TITULAR DE ADMINISTRACION Y RECUPERACION METROPOLITANA" })
+  @ApiProperty({
+    example:
+      "ADMINISTRADOR TITULAR DE ADMINISTRACION Y RECUPERACION METROPOLITANA",
+  })
   @Column("character varying", {
     name: "cargo_firmante_dictamen",
     nullable: true,
@@ -533,7 +531,7 @@ export class RequestEntity {
 
   @ApiProperty({ example: 12210 })
   @Column("numeric", { name: "id_expediente_tmp", nullable: true })
-  idRecordTmp: string | null;
+  idRecordTmp: number | null;
   /*
   @ApiProperty({ example: 12210 })
   @Column("character", { name: "trial444", nullable: true, length: 1 })

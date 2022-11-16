@@ -35,7 +35,7 @@ export declare class RequestDto {
     destinationManagement: string | null;
     affair: number | null;
     satDeterminant: string | null;
-    satDirectory: string | null;
+    satDirectory?: string | null;
     satZoneCoordinator: string | null;
     userCreated: string | null;
     creationDate: Date | null;
@@ -55,7 +55,7 @@ export declare class RequestDto {
     instanceBpm: string | null;
     trial: string | null;
     compensationType: string | null;
-    idStateRequest: string | null;
+    idStateRequest: number | null;
     searchSiab: number | null;
     priorityDate: Date | null;
     numberOfRejections: number | null;
@@ -75,5 +75,5 @@ export declare class RequestDto {
     keyStateOfRepublic: number | null;
     instanceBpel: number | null;
     verificationDateCump: Date | null;
-    idRecordTmp: string | null;
+    idRecordTmp: number | null;
 }

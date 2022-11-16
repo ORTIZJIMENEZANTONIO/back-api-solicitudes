@@ -15,20 +15,20 @@ const typeorm_1 = require("typeorm");
 let RequestEntity = class RequestEntity {
 };
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Identificador de solicitud' }),
+    (0, swagger_1.ApiProperty)({ example: "Identificador de solicitud" }),
     (0, typeorm_1.PrimaryGeneratedColumn)({
-        type: 'integer',
-        name: "id_solicitud"
+        type: "integer",
+        name: "id_solicitud",
     }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "id", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Identificador del expediente' }),
+    (0, swagger_1.ApiProperty)({ example: "Identificador del expediente" }),
     (0, typeorm_1.Column)("numeric", { name: "id_expediente", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idRecord", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2022-08-15 22:55:06' }),
+    (0, swagger_1.ApiProperty)({ example: "2022-08-15 22:55:06" }),
     (0, typeorm_1.Column)("timestamp without time zone", {
         name: "fecha_solicitud",
         nullable: true,
@@ -36,7 +36,7 @@ __decorate([
     __metadata("design:type", Date)
 ], RequestEntity.prototype, "applicationDate", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2022-08-15 22:55:06' }),
+    (0, swagger_1.ApiProperty)({ example: "2022-08-15 22:55:06" }),
     (0, typeorm_1.Column)("timestamp without time zone", {
         name: "fecha_recepcion",
         nullable: true,
@@ -44,7 +44,7 @@ __decorate([
     __metadata("design:type", Date)
 ], RequestEntity.prototype, "receptionDate", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Nombre del titular' }),
+    (0, swagger_1.ApiProperty)({ example: "Nombre del titular" }),
     (0, typeorm_1.Column)("character varying", {
         name: "nombre_titular",
         nullable: true,
@@ -53,7 +53,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "nameOfOwner", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Cargo del titular' }),
+    (0, swagger_1.ApiProperty)({ example: "Cargo del titular" }),
     (0, typeorm_1.Column)("character varying", {
         name: "cargo_titular",
         nullable: true,
@@ -62,7 +62,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "holderCharge", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '5544337788' }),
+    (0, swagger_1.ApiProperty)({ example: "5544337788" }),
     (0, typeorm_1.Column)("character varying", {
         name: "telefono_titular",
         nullable: true,
@@ -71,7 +71,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "phoneOfOwner", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Email del titular' }),
+    (0, swagger_1.ApiProperty)({ example: "Email del titular" }),
     (0, typeorm_1.Column)("character varying", {
         name: "email_titular",
         nullable: true,
@@ -80,27 +80,27 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "emailOfOwner", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '624' }),
+    (0, swagger_1.ApiProperty)({ example: "624" }),
     (0, typeorm_1.Column)("numeric", { name: "id_transferente", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idTransference", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '1' }),
+    (0, swagger_1.ApiProperty)({ example: "1" }),
     (0, typeorm_1.Column)("numeric", { name: "id_emisora", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idStation", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '1' }),
+    (0, swagger_1.ApiProperty)({ example: "1" }),
     (0, typeorm_1.Column)("numeric", { name: "id_autoridad", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idAuthority", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '1' }),
+    (0, swagger_1.ApiProperty)({ example: "1" }),
     (0, typeorm_1.Column)("numeric", { name: "id_delegacion_regional", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idRegionalDelegation", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Remitente' }),
+    (0, swagger_1.ApiProperty)({ example: "Remitente" }),
     (0, typeorm_1.Column)("character varying", {
         name: "remitente",
         nullable: true,
@@ -109,7 +109,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "sender", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Observaciones' }),
+    (0, swagger_1.ApiProperty)({ example: "Observaciones" }),
     (0, typeorm_1.Column)("character varying", {
         name: "observaciones",
         nullable: true,
@@ -118,7 +118,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "observations", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'Usuario destino' }),
+    (0, swagger_1.ApiProperty)({ example: "Usuario destino" }),
     (0, typeorm_1.Column)("character varying", {
         name: "usuario_destino",
         nullable: true,
@@ -141,7 +141,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "indicatedTaxpayer", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'ARA470120057' }),
+    (0, swagger_1.ApiProperty)({ example: "ARA470120057" }),
     (0, typeorm_1.Column)("character varying", {
         name: "expediente_transferente",
         nullable: true,
@@ -159,17 +159,17 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "transferEntNotes", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '25351' }),
+    (0, swagger_1.ApiProperty)({ example: "25351" }),
     (0, typeorm_1.Column)("numeric", { name: "id_direccion", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "idAddress", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2' }),
+    (0, swagger_1.ApiProperty)({ example: "2" }),
     (0, typeorm_1.Column)("numeric", { name: "procedencia_info", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "originInfo", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'acta_circunstanciada' }),
+    (0, swagger_1.ApiProperty)({ example: "acta_circunstanciada" }),
     (0, typeorm_1.Column)("character varying", {
         name: "acta_circunstanciada",
         nullable: true,
@@ -178,7 +178,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "circumstantialRecord", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'averiguacion_previa' }),
+    (0, swagger_1.ApiProperty)({ example: "averiguacion_previa" }),
     (0, typeorm_1.Column)("character varying", {
         name: "averiguacion_previa",
         nullable: true,
@@ -214,7 +214,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "tocaPenal", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '800-25-00-01-03-2019-31999' }),
+    (0, swagger_1.ApiProperty)({ example: "800-25-00-01-03-2019-31999" }),
     (0, typeorm_1.Column)("character varying", {
         name: "no_oficio",
         nullable: true,
@@ -223,7 +223,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "noPaper", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '2019-07-31T05:00:00.000Z' }),
+    (0, swagger_1.ApiProperty)({ example: "2019-07-31T05:00:00.000Z" }),
     (0, typeorm_1.Column)("timestamp without time zone", {
         name: "fecha_oficio",
         nullable: true,
@@ -259,7 +259,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "crime", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'ELECTRONICA' }),
+    (0, swagger_1.ApiProperty)({ example: "ELECTRONICA" }),
     (0, typeorm_1.Column)("character varying", {
         name: "via_recepcion",
         nullable: true,
@@ -277,12 +277,12 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "destinationManagement", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '39' }),
+    (0, swagger_1.ApiProperty)({ example: "39" }),
     (0, typeorm_1.Column)("numeric", { name: "asunto", nullable: true }),
     __metadata("design:type", Number)
 ], RequestEntity.prototype, "affair", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '800-25-00-01-03-2019' }),
+    (0, swagger_1.ApiProperty)({ example: "800-25-00-01-03-2019" }),
     (0, typeorm_1.Column)("character varying", {
         name: "sat_determinante",
         nullable: true,
@@ -309,7 +309,7 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "satZoneCoordinator", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'pepv860106v49' }),
+    (0, swagger_1.ApiProperty)({ example: "pepv860106v49" }),
     (0, typeorm_1.Column)("character varying", {
         name: "usuario_creacion",
         nullable: true,
@@ -361,12 +361,12 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "domainExtinction", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: '11' }),
+    (0, swagger_1.ApiProperty)({ example: "11" }),
     (0, typeorm_1.Column)("numeric", { name: "version", nullable: true }),
     __metadata("design:type", String)
 ], RequestEntity.prototype, "version", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: 'TE' }),
+    (0, swagger_1.ApiProperty)({ example: "TE" }),
     (0, typeorm_1.Column)("character varying", {
         name: "tipo_usuario_destino",
         nullable: true,
@@ -462,7 +462,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({ example: null }),
     (0, typeorm_1.Column)("numeric", { name: "id_solicitud_bienes", nullable: true }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], RequestEntity.prototype, "idStateRequest", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)({ example: null }),
@@ -546,7 +546,9 @@ __decorate([
     __metadata("design:type", String)
 ], RequestEntity.prototype, "nameSignatoryRuling", void 0);
 __decorate([
-    (0, swagger_1.ApiProperty)({ example: "ADMINISTRADOR TITULAR DE ADMINISTRACION Y RECUPERACION METROPOLITANA" }),
+    (0, swagger_1.ApiProperty)({
+        example: "ADMINISTRADOR TITULAR DE ADMINISTRACION Y RECUPERACION METROPOLITANA",
+    }),
     (0, typeorm_1.Column)("character varying", {
         name: "cargo_firmante_dictamen",
         nullable: true,
@@ -616,7 +618,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({ example: 12210 }),
     (0, typeorm_1.Column)("numeric", { name: "id_expediente_tmp", nullable: true }),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], RequestEntity.prototype, "idRecordTmp", void 0);
 RequestEntity = __decorate([
     (0, typeorm_1.Entity)("solicitudes", { schema: "sera" })

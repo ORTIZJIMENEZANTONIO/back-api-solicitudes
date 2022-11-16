@@ -16,7 +16,7 @@ export class FilterRequestDto {
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   id?: number | null;
 
   @Type(() => Date)
@@ -24,7 +24,7 @@ export class FilterRequestDto {
   @IsDate({
     message: Message.IsDate("$property"),
   })
-  @ApiProperty({ example: "2022-08-15 22:55:06" })
+  @ApiProperty({ example: "2022-08-15 22:55:06", required: false })
   applicationDate?: Date | null;
 
   @Type(() => String)
@@ -33,7 +33,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "Nombre del titular" })
+  @ApiProperty({ example: "Nombre del titular", required: false })
   nameOfOwner?: string | null;
 
   @Type(() => String)
@@ -42,7 +42,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "Cargo del titular" })
+  @ApiProperty({ example: "Cargo del titular", required: false })
   holderCharge?: string | null;
 
   @Type(() => String)
@@ -51,7 +51,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "800-25-00-01-03-2019-31999" })
+  @ApiProperty({ example: "800-25-00-01-03-2019-31999", required: false })
   noPaper?: string | null;
 
   @Type(() => Date)
@@ -59,7 +59,7 @@ export class FilterRequestDto {
   @IsDate({
     message: Message.IsDate("$property"),
   })
-  @ApiProperty({ example: "2019-07-31T05:00:00.000Z" })
+  @ApiProperty({ example: "2019-07-31T05:00:00.000Z", required: false })
   paperDate?: Date | null;
 
   @Type(() => Number)
@@ -73,64 +73,64 @@ export class FilterRequestDto {
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   idRegionalDelegationOpd?: number | null;
 
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 9 })
+  @ApiProperty({ example: 9, required: false })
   keyStateOfRepublic?: number | null;
 
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 624 })
+  @ApiProperty({ example: 624, required: false })
   idTransference?: number | null;
 
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   idStation?: number | null;
 
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 1 })
+  @ApiProperty({ example: 1, required: false })
   idAuthority?: number | null;
 
   @Type(() => String)
   @IsOptional()
   @IsString({ message: Message.STRING("$property") })
-  @Length(1, 100, {
+  @Length(1, 1250, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "ARA470120057" })
+  @ApiProperty({ example: "ARA470120057", required: false })
   transferenceFile?: string | null;
 
   @Type(() => String)
   @IsOptional()
   @IsString({ message: Message.STRING("$property") })
-  @Length(1, 100, {
+  @Length(1, 30, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "ELECTRONICA" })
+  @ApiProperty({ example: "ELECTRONICA", required: false })
   receiptRoute?: string | null;
 
   @Type(() => Number)
   @IsOptional()
   @IsNumber({}, { message: Message.NUMBER("$property") })
-  @ApiProperty({ example: 39 })
+  @ApiProperty({ example: 39, required: false })
   affair?: number | null;
 
   @Type(() => String)
   @IsOptional()
   @IsString({ message: Message.STRING("$property") })
-  @Length(1, 100, {
+  @Length(1, 30, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "SAT_SAE" })
+  @ApiProperty({ example: "SAT_SAE", required: false })
   typeOfTransfer?: string | null;
 
   @Type(() => String)
@@ -138,7 +138,7 @@ export class FilterRequestDto {
     message: Message.REQUIRED("$property"),
   })
   @IsString({ message: Message.STRING("$property") })
-  @Length(1, 100, {
+  @Length(1, 30, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
   @ApiProperty({ example: "PAMA" })
@@ -147,10 +147,10 @@ export class FilterRequestDto {
   @Type(() => String)
   @IsOptional()
   @IsString({ message: Message.STRING("$property") })
-  @Length(1, 100, {
+  @Length(1, 200, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: null })
+  @ApiProperty({ example: null, required: false })
   indicatedTaxpayer?: string | null;
 
   @Type(() => String)
@@ -159,7 +159,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "acta_circunstanciada" })
+  @ApiProperty({ example: "acta_circunstanciada", required: false })
   circumstantialRecord?: string | null;
 
   @Type(() => String)
@@ -168,7 +168,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: "averiguacion_previa" })
+  @ApiProperty({ example: "averiguacion_previa", required: false })
   previousInquiry?: string | null;
 
   @Type(() => String)
@@ -177,7 +177,7 @@ export class FilterRequestDto {
   @Length(1, 100, {
     message: Message.LENGTH("$property", "$constraint1 $constraint2"),
   })
-  @ApiProperty({ example: null })
+  @ApiProperty({ example: null, required: false })
   lawsuit?: string | null;
 
   @Type(() => Boolean)

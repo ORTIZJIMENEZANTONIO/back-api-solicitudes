@@ -55,7 +55,7 @@ export declare class RequestEntity {
     instanceBpm: string | null;
     trial: string | null;
     compensationType: string | null;
-    idStateRequest: string | null;
+    idStateRequest: number | null;
     searchSiab: number | null;
     priorityDate: Date | null;
     numberOfRejections: number | null;
@@ -75,5 +75,5 @@ export declare class RequestEntity {
     keyStateOfRepublic: number | null;
     instanceBpel: number | null;
     verificationDateCump: Date | null;
-    idRecordTmp: string | null;
+    idRecordTmp: number | null;
 }
